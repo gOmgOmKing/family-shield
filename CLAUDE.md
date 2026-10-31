@@ -56,9 +56,11 @@
 
 ## 작업 폴더와 푸시 (오너용 복붙 — 이 두 줄은 여기에만 둔다)
 
-GitHub 저장소를 만든 뒤부터 쓸 수 있다(현재 미생성 — 현재현황 "열린 일" 1번).
+저장소: https://github.com/gOmgOmKing/family-shield
 
 ```
 cd /d %USERPROFILE%\ADB
-git push
+git push origin main
 ```
+
+올린 뒤 확인: `git status -sb` 가 `## main...origin/main` 이면 끝, `[ahead N]` 이 붙어 있으면 아직 안 올라간 것.
