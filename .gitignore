@@ -1,0 +1,16 @@
+.gradle/
+build/
+app/build/
+local.properties
+.idea/
+*.iml
+.kotlin/
+
+# 서명 열쇠: 절대 GitHub에 올리지 않는다 (docs/절대준수.md §4)
+keystore/
+keystore.properties
+*.jks
+*.keystore
+
+# 릴리스 때 만들어지는 올릴 파일
+dist/

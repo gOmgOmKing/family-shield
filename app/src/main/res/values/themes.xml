@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 기기 기본 밝은 테마. 상태 표시줄 아이콘을 어둡게 해 밝은 배경에서도 보이게 한다 -->
+    <style name="Theme.Shield" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

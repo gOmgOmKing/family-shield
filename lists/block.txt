@@ -1,0 +1,37 @@
+# 광고 방패 — 직접 관리하는 차단 목록
+#
+# 한 줄에 주소 하나. 그 주소와 그 아래 주소가 모두 막힙니다 (ad.daum.net → display.ad.daum.net 도 막힘).
+# '#' 뒤는 설명이라 무시됩니다. GitHub 에서 이 파일을 고쳐 저장하면 몇 시간 안에 부모님 폰에 반영됩니다.
+#
+# 아래 주소 대부분은 커뮤니티 목록에도 있습니다. 그래도 여기 두는 이유: 앱을 막 설치해서
+# 와이파이로 커뮤니티 목록을 아직 못 받았을 때도 기본 광고는 막히게 하려고.
+# 출처 표시: [K] = List-KR DNS 목록에 있음, [H] = HaGeZi Pro 목록에 있음 (2026-10-31 확인)
+# 절대 넣지 말 것: t1.daumcdn.net 같은 공용 이미지 서버 (티스토리 글 사진까지 안 보이게 됨)
+
+# --- Google 광고 (블로그 전면 광고, 광고 클릭 이동) ---
+doubleclick.net            # [H] g.doubleclick.net / [K] ad.*.doubleclick.net. 유튜브 광고 눌렀을 때 넘어가는 길도 막음
+googlesyndication.com      # [H][K] 애드센스 광고 (티스토리·블로그스팟 전면 광고)
+googleadservices.com       # [K] 광고를 누르면 광고주 사이트로 넘겨 주는 주소
+adservice.google.com       # [K]
+googletagservices.com      # [K]
+adtrafficquality.google    # [H]
+
+# --- 카카오 애드핏 (티스토리 광고) ---
+ad.daum.net                # [H][K] display.ad.daum.net 등 광고 서버
+
+# --- 네이버 광고 ---
+adcr.naver.com             # [K] 파워링크 광고 클릭 이동
+siape.veta.naver.com       # [H]
+tivan.naver.com            # [K]
+
+# --- 국내 광고 회사 ---
+dable.io                   # [H][K] 데이블 (기사 아래 '추천 기사' 광고)
+mobon.net                  # [H][K] 모비온
+mediacategory.com          # [H] 모비온 광고 서버
+adop.cc                    # [H] 애드오피
+interworksmedia.co.kr      # [H] 인터웍스미디어
+
+# --- 해외 광고 회사 ---
+taboola.com                # [H] 타불라 (기사 아래 낚시성 광고)
+criteo.com                 # [H] 크리테오
+criteo.net                 # [H]
