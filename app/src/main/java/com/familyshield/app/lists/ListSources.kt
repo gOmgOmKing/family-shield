@@ -2,7 +2,7 @@ package com.familyshield.app.lists
 
 /**
  * 폰이 받아 오는 목록 전부. 주소·크기 상한·최소 개수는 여기 한 곳에서만 정한다.
- * (확인일 2026-10-31: HaGeZi Pro 21만·Pop-Up 5만·TIF mini 19만 개, List-KR DNS 약 390줄)
+ * (확인일 2026-10-31: HaGeZi Pro 21만·Pop-Up 5만·TIF mini 19만 개, List-KR DNS 약 390줄 / 2026-11-01: HaGeZi 도박 62만 개)
  */
 object ListSources {
 
@@ -35,6 +35,12 @@ object ListSources {
             "hagezi-tif-mini", "HaGeZi 위협 정보 (사기·악성)",
             "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.mini-onlydomains.txt",
             ListKind.BLOCK, NetworkRule.UNMETERED_ONLY, maxBytes = 16 * MB, minEntries = 50_000,
+        ),
+        // 오너 결정 2026-11-01. 전체판(62만 개, 약 11MB). 폰이 무거우면 중간판 gambling.medium-onlydomains.txt (18만 개)
+        ListSource(
+            "hagezi-gambling", "HaGeZi 도박 사이트",
+            "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling-onlydomains.txt",
+            ListKind.BLOCK, NetworkRule.UNMETERED_ONLY, maxBytes = 32 * MB, minEntries = 100_000,
         ),
         ListSource(
             "listkr-dns", "List-KR DNS (한국 광고)",

@@ -113,7 +113,7 @@ class MainActivity : Activity() {
             status.setTextColor(Ui.RED)
         }
         Ui.show(onButton, !s.vpnRunning)
-        count.text = "지금까지 막은 광고·위험 주소: %,d번\n(차단 규칙 %,d개 사용 중)".format(s.blockLog.total, s.filterSize)
+        count.text = "지금까지 막은 광고·위험 주소: %,d번\n(차단 규칙 %,d개 사용 중, 불러오기 %.1f초)".format(s.blockLog.total, s.filterSize, s.filterBuildMs / 1000.0)
 
         val p = mutableListOf<String>()
         s.vpnProblem?.let { p += "⚠ $it" }

@@ -49,6 +49,9 @@ class Shield(private val app: Context) {
         private set
     @Volatile var filterSize: Int = 0
         private set
+    /** 마지막으로 차단 규칙을 만드는 데 걸린 시간(밀리초). 폰 부담을 화면에서 바로 보려고 */
+    @Volatile var filterBuildMs: Long = 0
+        private set
 
     // 화면에 그대로 보여 줄 현재 상태 (VPN 서비스가 채운다)
     @Volatile var vpnRunning = false
@@ -66,9 +69,11 @@ class Shield(private val app: Context) {
     fun rebuildFilterInBackground() = worker.execute { rebuildFilter() }
 
     private fun rebuildFilter() {
+        val started = android.os.SystemClock.elapsedRealtime()
         val f = FilterBuilder.build(allLists, store, ::openBundled, prefs.coupangOn)
         filter = f
         filterSize = f.blockSize
+        filterBuildMs = android.os.SystemClock.elapsedRealtime() - started
     }
 
     /** 자동 업데이트 스위치 (오너가 GitHub lists/AUTO_UPDATE.txt 로 켜고 끔). 받은 사본이 없으면 앱에 들어 있는 기본값(끄기) */

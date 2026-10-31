@@ -43,6 +43,23 @@ class OwnListsTest {
     }
 
     @Test
+    fun official_lottery_sites_stay_open_although_gambling_list_blocks_them() {
+        // 2026-11-01 HaGeZi 도박 목록에 실제로 들어 있던 공식 주소들 (오너 결정: 공식 사행산업 사이트는 예외)
+        val gamblingListEntries = listOf("dhlottery.co.kr", "bokgwon.go.kr", "klc.go.kr")
+        val f = DomainFilter(DomainSet.of(gamblingListEntries), DomainSet.of(read("allow.txt")))
+        for (host in listOf("dhlottery.co.kr", "www.dhlottery.co.kr", "m.dhlottery.co.kr", "bokgwon.go.kr", "www.bokgwon.go.kr", "klc.go.kr")) {
+            assertFalse("$host 가 막힘", f.isBlocked(host))
+        }
+    }
+
+    @Test
+    fun lottery_exception_does_not_open_unofficial_lookalikes() {
+        val f = DomainFilter(DomainSet.of(listOf("nlotto.co.kr", "dhlottery-event.com")), DomainSet.of(read("allow.txt")))
+        assertTrue(f.isBlocked("nlotto.co.kr"))
+        assertTrue(f.isBlocked("dhlottery-event.com"))
+    }
+
+    @Test
     fun blocks_known_ad_hosts() {
         for (host in listOf("googleads.g.doubleclick.net", "pagead2.googlesyndication.com", "www.googleadservices.com", "display.ad.daum.net")) {
             assertTrue(host, ownBlockingEverything.isBlocked(host))
