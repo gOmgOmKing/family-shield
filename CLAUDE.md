@@ -7,6 +7,7 @@
 
 - **자동 업데이트 켜기/끄기** → GitHub 의 [`lists/AUTO_UPDATE.txt`](lists/AUTO_UPDATE.txt) 맨 아래 줄 (`끄기`/`켜기`)
 - **새 버전 직접 설치** → [새버전_설치방법.md](새버전_설치방법.md)
+- **토토 의심 주소 막기 켜기/끄기** → GitHub 의 [`collector/차단스위치.txt`](collector/차단스위치.txt) (분류마다 `끄기`/`켜기`, 앱 버전 1.2 부터 효과)
 - GitHub 첫 화면 안내 → [README.md](README.md)
 
 ## 세션 시작 절차
