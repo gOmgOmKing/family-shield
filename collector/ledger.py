@@ -13,7 +13,7 @@ Stats = namedtuple("Stats", "total already_listed newly_found later_listed unkno
 
 LEDGER_HEADER = ("도메인", "한글표시", "분류", "근거", "처음발견", "발견때_HaGeZi", "HaGeZi_오른날")
 DAILY_FIELDS = ("실행시각", "새도메인_상태", "새도메인_판", "새도메인_개수", "도박목록_상태", "도박목록_개수",
-                "도박목록_한글주소", "새후보", "새후보_분류별", "누적후보", "누적_HaGeZi확인")
+                "도박목록_한글주소", "새후보", "새후보_분류별", "누적후보", "누적_HaGeZi확인", "차단파일")
 TOTAL = "합계"
 
 
@@ -84,9 +84,16 @@ def read_daily(path):
 
 
 def append_daily(path, row):
+    """칸이 늘어난 뒤의 옛 파일은 새 칸을 빈칸으로 채워 다시 쓴다(옛 기록은 그대로)."""
+    rows = read_daily(path)
+    if rows and list(rows[0]) != list(DAILY_FIELDS):
+        with open(path, "w", encoding="utf-8", newline="") as f:
+            w = csv.DictWriter(f, DAILY_FIELDS, delimiter="\t", lineterminator="\n", restval="")
+            w.writeheader()
+            w.writerows({k: r.get(k, "") or "" for k in DAILY_FIELDS} for r in rows)
     is_new = not os.path.exists(path)
     with open(path, "a", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, DAILY_FIELDS, delimiter="\t", lineterminator="\n")
+        w = csv.DictWriter(f, DAILY_FIELDS, delimiter="\t", lineterminator="\n", restval="")
         if is_new:
             w.writeheader()
         w.writerow(row)
@@ -99,7 +106,8 @@ def render_summary(ledger, daily_rows, now_text):
         "",
         "자동으로 만든 파일입니다(손으로 고치지 마세요). **관찰만 하고, 차단에는 쓰지 않습니다.**",
         f"마지막 실행: {now_text} (한국 시간). 전체 후보: [candidates.tsv](candidates.tsv), "
-        "실행 기록: [daily.tsv](daily.tsv).",
+        "실행 기록: [daily.tsv](daily.tsv), 차단 파일: [block.txt](block.txt) "
+        "(main 의 `collector/차단스위치.txt` 에서 켠 분류만 들어감).",
         "",
         "## 분류별 숫자",
         "",
@@ -123,11 +131,12 @@ def render_summary(ledger, daily_rows, now_text):
         "",
         "## 최근 실행 기록 (최근 14번)",
         "",
-        "| 실행 시각 | 새 후보 | 새 도메인 목록 | 도박 목록 |",
-        "|---|---|---|---|",
+        "| 실행 시각 | 새 후보 | 새 도메인 목록 | 도박 목록 | 차단 파일 |",
+        "|---|---|---|---|---|",
     ]
     for row in daily_rows[-14:][::-1]:
-        lines.append(f"| {row['실행시각']} | {row['새후보']} | {row['새도메인_상태']} | {row['도박목록_상태']} |")
+        lines.append(f"| {row['실행시각']} | {row['새후보']} | {row['새도메인_상태']} | {row['도박목록_상태']} "
+                     f"| {row.get('차단파일') or '-'} |")
     lines += [
         "",
         "## 최근 후보 100개 (이름을 한글로 풀어 씀)",

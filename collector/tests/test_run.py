@@ -19,7 +19,9 @@ def ok(text, etag):
     return FakeResponse(text.encode(), {"ETag": etag})
 
 
-class DailyRun(unittest.TestCase):
+class RunFixture(unittest.TestCase):
+    """임시 결과 폴더와 실행 도우미 (시험은 없음)"""
+
     def setUp(self):
         self._tmp = tempfile.TemporaryDirectory()
         self.dir = self._tmp.name
@@ -28,8 +30,13 @@ class DailyRun(unittest.TestCase):
     def tearDown(self):
         self._tmp.cleanup()
 
-    def run_once(self, opener, now=NOW):
-        return run(self.dir, now, opener=opener, sleep=self.sleeps.append, min_entries=2)
+    def run_once(self, opener, now=NOW, switch=None, allow=None):
+        return run(self.dir, now, opener=opener, sleep=self.sleeps.append, min_entries=2,
+                   switch_text=switch, allow_text=allow)
+
+    def block_domains(self):
+        with open(os.path.join(self.dir, "block.txt"), encoding="utf-8") as f:
+            return [line for line in f.read().splitlines() if line and not line.startswith("#")]
 
     def ledger(self):
         return read_ledger(os.path.join(self.dir, "candidates.tsv"))
@@ -38,6 +45,8 @@ class DailyRun(unittest.TestCase):
         with open(os.path.join(self.dir, "state.json"), encoding="utf-8") as f:
             return json.load(f)
 
+
+class DailyRun(RunFixture):
     def test_first_run_records_candidates_counts_and_summary(self):
         code = self.run_once(FakeOpener(ok(NRD_TEXT, '"n1"'), ok(GAMBLING_TEXT, '"g1"')))
         self.assertEqual(code, 0)
@@ -100,6 +109,45 @@ class DailyRun(unittest.TestCase):
         row = read_daily(os.path.join(self.dir, "daily.tsv"))[-1]
         self.assertEqual(row["새도메인_상태"], "차단 429")
         self.assertTrue(row["도박목록_상태"].startswith("쉼"))
+
+
+class RealFilePaths(unittest.TestCase):
+    def test_switch_and_allow_paths_point_to_real_files_in_the_repository(self):
+        # 경로가 틀리면 오너가 '켜기'로 바꿔도 조용히 무시된다
+        import run as run_module
+        self.assertTrue(os.path.isfile(run_module.SWITCH_PATH), run_module.SWITCH_PATH)
+        self.assertTrue(os.path.isfile(run_module.ALLOW_PATH), run_module.ALLOW_PATH)
+
+
+class BlockFileFromSwitch(RunFixture):
+    def test_block_file_exists_and_is_empty_when_switch_is_missing(self):
+        self.run_once(FakeOpener(ok(NRD_TEXT, '"n1"'), ok(GAMBLING_TEXT, '"g1"')))
+        self.assertEqual(self.block_domains(), [])
+        row = read_daily(os.path.join(self.dir, "daily.tsv"))[-1]
+        self.assertTrue(row["차단파일"].startswith("끔"))
+
+    def test_enabled_category_goes_into_block_file(self):
+        self.run_once(FakeOpener(ok(NRD_TEXT, '"n1"'), ok(GAMBLING_TEXT, '"g1"')), switch="한글도박어: 켜기\n")
+        self.assertEqual(self.block_domains(), [TOTO])
+
+    def test_allowed_domain_is_left_out_of_block_file(self):
+        self.run_once(FakeOpener(ok(NRD_TEXT, '"n1"'), ok(GAMBLING_TEXT, '"g1"')),
+                      switch="한글도박어: 켜기\n로마자토토어: 켜기\n", allow="safetotosite.xyz  # 시험\n")
+        self.assertEqual(self.block_domains(), [TOTO])
+
+    def test_switch_change_alone_rebuilds_block_file(self):
+        self.run_once(FakeOpener(ok(NRD_TEXT, '"n1"'), ok(GAMBLING_TEXT, '"g1"')))
+        self.run_once(FakeOpener(304, 304), switch="로마자토토어: 켜기\n")
+        self.assertEqual(self.block_domains(), ["safetotosite.xyz"])
+
+    def test_sudden_jump_keeps_previous_block_file_and_fails_the_run(self):
+        on = "로마자토토어: 켜기\n"
+        self.run_once(FakeOpener(ok(NRD_TEXT, '"n1"'), ok(GAMBLING_TEXT, '"g1"')), switch=on)
+        flood = "".join(f"safetotosite{i}.xyz\n" for i in range(501))
+        code = self.run_once(FakeOpener(ok(flood, '"n2"'), ok(GAMBLING_TEXT, '"g2"')), NOW + timedelta(days=1), switch=on)
+        self.assertEqual(code, 1)
+        self.assertEqual(self.block_domains(), ["safetotosite.xyz"])
+        self.assertIn("멈춤", read_daily(os.path.join(self.dir, "daily.tsv"))[-1]["차단파일"])
 
 
 if __name__ == "__main__":

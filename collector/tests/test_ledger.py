@@ -4,7 +4,8 @@ import tempfile
 import unittest
 
 from classify import Verdict
-from ledger import category_stats, read_ledger, render_summary, update_ledger, write_ledger
+from ledger import (DAILY_FIELDS, append_daily, category_stats, read_daily, read_ledger, render_summary,
+                    update_ledger, write_ledger)
 
 
 def verdicts(*domains, category="한글도박어"):
@@ -88,6 +89,20 @@ class LedgerFile(unittest.TestCase):
             self.assertEqual(read_ledger(os.path.join(d, "none.tsv")), {})
 
 
+class DailyFile(unittest.TestCase):
+    def test_old_daily_file_gets_new_column_without_losing_rows(self):
+        with tempfile.TemporaryDirectory() as d:
+            path = os.path.join(d, "daily.tsv")
+            old_fields = [f for f in DAILY_FIELDS if f != "차단파일"]
+            with open(path, "w", encoding="utf-8", newline="") as f:
+                f.write("\t".join(old_fields) + "\n" + "\t".join(["2026-11-01 09:35"] + ["x"] * (len(old_fields) - 1)) + "\n")
+            append_daily(path, {"실행시각": "2026-11-02 19:17", "차단파일": "끔"})
+            rows = read_daily(path)
+            self.assertEqual([r["실행시각"] for r in rows], ["2026-11-01 09:35", "2026-11-02 19:17"])
+            self.assertEqual((rows[0]["차단파일"], rows[1]["차단파일"]), ("", "끔"))
+            self.assertEqual(rows[0]["새도메인_상태"], "x")
+
+
 class Summary(unittest.TestCase):
     def test_rate_without_data_is_shown_as_not_yet_not_zero(self):
         ledger, _ = update_ledger({}, verdicts("r.kr", category=".kr도박어"), gambling=None, today="2026-11-01")
@@ -102,6 +117,12 @@ class Summary(unittest.TestCase):
         unchanged = dict(received, 실행시각="2026-11-01 20:00", 도박목록_상태="안바뀜", 도박목록_개수="", 도박목록_한글주소="")
         text = render_summary({}, daily_rows=[received, unchanged], now_text="2026-11-01 20:00")
         self.assertIn("한글 주소 14개", text)
+
+    def test_run_history_shows_block_file_status(self):
+        row = {"실행시각": "2026-11-02 19:17", "새후보": "3", "새도메인_상태": "받음", "도박목록_상태": "받음",
+               "차단파일": "끔 (켠 분류 없음)"}
+        text = render_summary({}, daily_rows=[row], now_text="2026-11-02 19:17")
+        self.assertIn("| 2026-11-02 19:17 | 3 | 받음 | 받음 | 끔 (켠 분류 없음) |", text)
 
     def test_recent_candidates_are_listed_with_readable_name(self):
         ledger, _ = update_ledger({}, {"xn--2o2b43eq1nqrja.com": Verdict("한글도박어", "한글 '토토'", "제로백토토.com")},

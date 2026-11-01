@@ -1,7 +1,8 @@
 """하루 한 번 실행: 두 목록을 받고, 새 도메인 이름을 판별해 후보 장부와 요약을 남긴다.
 
 사용: python run.py <결과 폴더>
-받기에 실패하면 그 사실을 daily.tsv 와 요약에 적고 종료 코드 1 로 끝난다(GitHub 이 빨간불·메일로 알림).
+차단 파일(block.txt)은 collector/차단스위치.txt 에서 켠 분류만 담는다(모두 끄기면 빈 파일).
+받기에 실패하거나 차단 파일이 멈추면 그 사실을 daily.tsv 와 요약에 적고 종료 코드 1 로 끝난다(GitHub 이 빨간불로 알림).
 """
 import json
 import os
@@ -11,17 +12,23 @@ import urllib.request
 from collections import Counter
 from datetime import datetime, timedelta, timezone
 
+from block import build_block, parse_allow, read_switch, render_block
 from classify import classify, to_unicode
 from fetch import fetch
 from ledger import append_daily, read_daily, read_ledger, render_summary, update_ledger, write_ledger
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+SWITCH_PATH = os.path.join(HERE, "차단스위치.txt")
+ALLOW_PATH = os.path.join(HERE, "..", "lists", "allow.txt")
 KST = timezone(timedelta(hours=9))
 MIN_ENTRIES = 100_000  # 2026-10-31 기준 nrd7 267만 개, 도박 목록 62만 개. 이보다 적으면 깨진 파일로 본다
 PAUSE_SECONDS = 3
 OK_STATUSES = ("받음", "안바뀜")
 
 
-def run(data_dir, now, opener=urllib.request.urlopen, sleep=time.sleep, min_entries=MIN_ENTRIES):
+def run(data_dir, now, opener=urllib.request.urlopen, sleep=time.sleep, min_entries=MIN_ENTRIES,
+        switch_text=None, allow_text=None):
+    """switch_text·allow_text 가 None 이면 파일이 없는 것 — 모두 끄기, 허용 목록 없음."""
     state_path = os.path.join(data_dir, "state.json")
     state = _load_json(state_path)
     nrd = _get("nrd", state, now, opener, min_entries)
@@ -33,9 +40,16 @@ def run(data_dir, now, opener=urllib.request.urlopen, sleep=time.sleep, min_entr
         verdicts = {d: v for d in nrd.domains if (v := classify(d))}
     gambling_set = set(gambling.domains) if gambling.domains is not None else None
 
+    today, now_text = now.strftime("%Y-%m-%d"), now.strftime("%Y-%m-%d %H:%M")
     ledger_path = os.path.join(data_dir, "candidates.tsv")
-    ledger, new = update_ledger(read_ledger(ledger_path), verdicts, gambling_set, now.strftime("%Y-%m-%d"))
+    ledger, new = update_ledger(read_ledger(ledger_path), verdicts, gambling_set, today)
     write_ledger(ledger_path, ledger)
+
+    enabled = read_switch(switch_text)
+    block = build_block(ledger, enabled, parse_allow(allow_text), today)
+    if block.domains is not None:  # 멈춤이면 어제 파일을 그대로 둔다
+        with open(os.path.join(data_dir, "block.txt"), "w", encoding="utf-8", newline="\n") as f:
+            f.write(render_block(block.domains, enabled, now_text))
 
     daily_path = os.path.join(data_dir, "daily.tsv")
     append_daily(daily_path, {
@@ -50,13 +64,15 @@ def run(data_dir, now, opener=urllib.request.urlopen, sleep=time.sleep, min_entr
         "새후보_분류별": ", ".join(f"{c} {n}" for c, n in Counter(ledger[d].category for d in new).items()),
         "누적후보": str(len(ledger)),
         "누적_HaGeZi확인": str(sum(bool(e.listed_on) for e in ledger.values())),
+        "차단파일": block.status,
     })
     with open(os.path.join(data_dir, "README.md"), "w", encoding="utf-8", newline="\n") as f:
-        f.write(render_summary(ledger, read_daily(daily_path), now.strftime("%Y-%m-%d %H:%M")))
+        f.write(render_summary(ledger, read_daily(daily_path), now_text))
     with open(state_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(state, f, ensure_ascii=False, indent=2, sort_keys=True)
         f.write("\n")
-    return 0 if nrd.status in OK_STATUSES and gambling.status in OK_STATUSES else 1
+    fetched_ok = nrd.status in OK_STATUSES and gambling.status in OK_STATUSES
+    return 0 if fetched_ok and block.domains is not None else 1
 
 
 class _List:
@@ -105,7 +121,14 @@ def _load_json(path):
         return json.load(f)
 
 
+def _read_text(path):
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        return f.read()
+
+
 if __name__ == "__main__":
     out = sys.argv[1]
     os.makedirs(out, exist_ok=True)
-    sys.exit(run(out, datetime.now(KST)))
+    sys.exit(run(out, datetime.now(KST), switch_text=_read_text(SWITCH_PATH), allow_text=_read_text(ALLOW_PATH)))

@@ -1,5 +1,7 @@
-# 토토 후보 관찰 — 관찰 전용, 차단에는 쓰지 않는다. 설명: collector/README.md
+# 토토 후보 관찰. 설명: collector/README.md
 # 하는 일: HaGeZi 목록 두 개를 받아 새 도메인 이름만 보고 판별 → 결과를 collector-data 브랜치의 collector/ 에 저장.
+# 차단 파일(collector/block.txt)에는 collector/차단스위치.txt 에서 켠 분류만 들어간다(기본 전부 끄기 = 빈 목록).
+# 스위치를 고쳐 main 에 저장하면 아래 push 조건(collector/**)으로 바로 한 번 돈다.
 # 후보 도메인에는 접속하지 않는다(HTTP·DNS 없음). AI 를 쓰지 않는다. 비밀값이 필요 없다.
 name: 토토 후보 관찰
 
