@@ -130,6 +130,11 @@ class BlockFileFromSwitch(RunFixture):
         self.run_once(FakeOpener(ok(NRD_TEXT, '"n1"'), ok(GAMBLING_TEXT, '"g1"')), switch="한글도박어: 켜기\n")
         self.assertEqual(self.block_domains(), [TOTO])
 
+    def test_summary_tells_which_categories_are_used_for_blocking(self):
+        self.run_once(FakeOpener(ok(NRD_TEXT, '"n1"'), ok(GAMBLING_TEXT, '"g1"')), switch="한글도박어: 켜기\n")
+        with open(os.path.join(self.dir, "README.md"), encoding="utf-8") as f:
+            self.assertIn("켠 분류(한글도박어)", f.read())
+
     def test_allowed_domain_is_left_out_of_block_file(self):
         self.run_once(FakeOpener(ok(NRD_TEXT, '"n1"'), ok(GAMBLING_TEXT, '"g1"')),
                       switch="한글도박어: 켜기\n로마자토토어: 켜기\n", allow="safetotosite.xyz  # 시험\n")

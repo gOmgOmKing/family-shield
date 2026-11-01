@@ -99,12 +99,19 @@ def append_daily(path, row):
         w.writerow(row)
 
 
-def render_summary(ledger, daily_rows, now_text):
+def render_summary(ledger, daily_rows, now_text, enabled=frozenset()):
+    """enabled = 차단 스위치에서 켠 분류. 맨 위 문장이 스위치 상태를 그대로 말한다."""
     stats = category_stats(ledger)
+    if enabled:
+        names = ", ".join(c for c in CATEGORIES if c in enabled)
+        use = (f"**켠 분류({names})의 후보는 차단 파일에 들어가 부모님 폰 차단에 쓰입니다**"
+               "(이 파일을 받는 새 버전을 설치한 폰부터). 나머지 분류는 관찰만 합니다.")
+    else:
+        use = "**지금은 관찰만 합니다** — 차단 스위치가 전부 끄기라 차단 파일은 빈 목록입니다."
     lines = [
         "# 토토 후보 관찰 결과",
         "",
-        "자동으로 만든 파일입니다(손으로 고치지 마세요). **관찰만 하고, 차단에는 쓰지 않습니다.**",
+        f"자동으로 만든 파일입니다(손으로 고치지 마세요). {use}",
         f"마지막 실행: {now_text} (한국 시간). 전체 후보: [candidates.tsv](candidates.tsv), "
         "실행 기록: [daily.tsv](daily.tsv), 차단 파일: [block.txt](block.txt) "
         "(main 의 `collector/차단스위치.txt` 에서 켠 분류만 들어감).",

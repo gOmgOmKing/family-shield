@@ -118,6 +118,17 @@ class Summary(unittest.TestCase):
         text = render_summary({}, daily_rows=[received, unchanged], now_text="2026-11-01 20:00")
         self.assertIn("한글 주소 14개", text)
 
+    def test_summary_says_observation_only_when_switch_is_all_off(self):
+        text = render_summary({}, daily_rows=[], now_text="2026-11-02 19:17", enabled=set())
+        self.assertIn("지금은 관찰만", text)
+        self.assertNotIn("차단에 쓰입니다", text)
+
+    def test_summary_names_enabled_categories_as_used_for_blocking(self):
+        text = render_summary({}, daily_rows=[], now_text="2026-11-02 19:17", enabled={"번호돌림", "한글도박어"})
+        self.assertIn("켠 분류(한글도박어, 번호돌림)", text)
+        self.assertIn("차단에 쓰입니다", text)
+        self.assertNotIn("지금은 관찰만", text)
+
     def test_run_history_shows_block_file_status(self):
         row = {"실행시각": "2026-11-02 19:17", "새후보": "3", "새도메인_상태": "받음", "도박목록_상태": "받음",
                "차단파일": "끔 (켠 분류 없음)"}

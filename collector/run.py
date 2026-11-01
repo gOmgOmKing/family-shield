@@ -67,7 +67,7 @@ def run(data_dir, now, opener=urllib.request.urlopen, sleep=time.sleep, min_entr
         "차단파일": block.status,
     })
     with open(os.path.join(data_dir, "README.md"), "w", encoding="utf-8", newline="\n") as f:
-        f.write(render_summary(ledger, read_daily(daily_path), now_text))
+        f.write(render_summary(ledger, read_daily(daily_path), now_text, enabled))
     with open(state_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(state, f, ensure_ascii=False, indent=2, sort_keys=True)
         f.write("\n")
