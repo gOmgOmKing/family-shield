@@ -2,7 +2,7 @@
 # 새 버전 설치 파일(family-shield.apk)을 만들어 GitHub Releases 에 보관한다. AI 없이 오너가 직접 실행한다.
 #   - 윈도우: scripts\release.cmd 더블클릭
 #   - 또는 Git Bash 에서: bash scripts/release.sh "바뀐 내용 한 줄"
-# 부모님 폰은 자동 업데이트 스위치(lists/AUTO_UPDATE.txt)가 '켜기'일 때만 스스로 받는다. 꺼져 있으면 오너가 직접 설치 — 새버전_설치방법.md
+# 앱은 스스로 업데이트하지 않는다(1.3 부터). 부모님 폰에는 오너가 직접 설치 — 새버전_설치방법.md
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -68,7 +68,6 @@ APK=app/build/outputs/apk/release/app-release.apk
 
 rm -rf dist && mkdir -p dist
 cp "$APK" dist/family-shield.apk
-printf '%s\n' "$NEW" > dist/version.txt # 자동 업데이트 스위치가 '켜기'인 폰만 이 숫자를 본다
 
 # --- 3. 버전 기록을 GitHub 에 올리고 릴리스 만들기 ---
 trap 'echo; echo "❌ GitHub 에 올리는 중 멈췄습니다. 인터넷과 GitHub 로그인을 확인한 뒤 release.cmd 를 다시 실행하세요 (버전 숫자가 하나 건너뛸 수 있음)."' ERR
@@ -77,7 +76,7 @@ git commit -q -m "릴리스 $TAG"
 git tag "$TAG"
 git push -q origin HEAD
 git push -q origin "$TAG"
-gh release create "$TAG" dist/family-shield.apk dist/version.txt --repo "$REPO" --title "광고 방패 1.$NEW" --notes "$NOTES"
+gh release create "$TAG" dist/family-shield.apk --repo "$REPO" --title "광고 방패 1.$NEW" --notes "$NOTES"
 
 echo
 echo "✅ 완료: $TAG 를 올렸습니다. 설치 파일: dist/family-shield.apk"

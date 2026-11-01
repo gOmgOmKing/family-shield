@@ -19,7 +19,6 @@ object FilterBuilder {
             val target = when (source.kind) {
                 ListKind.BLOCK -> block
                 ListKind.ALLOW -> allow
-                ListKind.SETTING -> continue
             }
             open(source, store, openBundled)?.use { reader -> ListParser.parse(reader).forEach(target::add) }
         }

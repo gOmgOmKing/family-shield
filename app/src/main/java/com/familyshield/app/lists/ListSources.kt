@@ -8,15 +8,11 @@ object ListSources {
 
     private const val MB = 1_000_000L
 
-    /** 자동 업데이트 스위치 파일 이름 (저장소 lists/AUTO_UPDATE.txt). 오너가 '켜기'/'끄기' 한 줄로 켜고 끈다 */
-    const val UPDATE_SWITCH_ID = "AUTO_UPDATE"
-
-    /** 오너가 GitHub 에서 직접 고치는 목록과 스위치. 몇 시간마다, 어떤 망에서든 받는다 (파일이 작음) */
+    /** 오너가 GitHub 에서 직접 고치는 목록. 몇 시간마다, 어떤 망에서든 받는다 (파일이 작음) */
     fun own(githubRepo: String): List<ListSource> = listOf(
         own(githubRepo, "block", "직접 관리 차단 목록", ListKind.BLOCK),
         own(githubRepo, "coupang", "쿠팡 파트너스 목록", ListKind.BLOCK), // 늘 적용 ('쿠팡 광고 막기' 스위치는 2026-11-01 없앰)
         own(githubRepo, "allow", "허용 목록", ListKind.ALLOW),
-        own(githubRepo, UPDATE_SWITCH_ID, "자동 업데이트 스위치", ListKind.SETTING),
     )
 
     /** 커뮤니티 목록과 토토 후보 목록. 하루 한 번, 와이파이처럼 요금 안 드는 망에서만 받는다 (파일이 큼) */

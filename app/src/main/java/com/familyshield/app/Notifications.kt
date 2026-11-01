@@ -11,17 +11,17 @@ import com.familyshield.app.ui.MainActivity
 object Notifications {
     const val ID_PROTECTING = 1
     private const val ID_PROBLEM = 2
-    private const val ID_UPDATE = 3
 
     private const val CH_PROTECTING = "protecting"
     private const val CH_PROBLEM = "problem"
-    private const val CH_UPDATE = "update"
+    /** 1.2 까지의 '새 버전' 알림 채널. 1.2 에서 넘어온 폰의 알림 설정에 남지 않게 지운다 */
+    private const val OLD_CH_UPDATE = "update"
 
     fun createChannels(context: Context) {
         val nm = context.getSystemService(NotificationManager::class.java)
         nm.createNotificationChannel(NotificationChannel(CH_PROTECTING, "보호 중 표시", NotificationManager.IMPORTANCE_MIN))
         nm.createNotificationChannel(NotificationChannel(CH_PROBLEM, "보호가 꺼졌을 때", NotificationManager.IMPORTANCE_HIGH))
-        nm.createNotificationChannel(NotificationChannel(CH_UPDATE, "새 버전", NotificationManager.IMPORTANCE_DEFAULT))
+        nm.deleteNotificationChannel(OLD_CH_UPDATE)
     }
 
     fun protecting(context: Context): Notification =
@@ -47,21 +47,6 @@ object Notifications {
 
     fun clearProblem(context: Context) {
         context.getSystemService(NotificationManager::class.java).cancel(ID_PROBLEM)
-    }
-
-    fun installReady(context: Context, confirm: Intent) {
-        val tap = PendingIntent.getActivity(
-            context, 0, Intent(confirm).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
-        )
-        val n = Notification.Builder(context, CH_UPDATE)
-            .setSmallIcon(R.drawable.ic_shield)
-            .setContentTitle("광고 방패 새 버전")
-            .setContentText("눌러서 '설치'를 누르세요")
-            .setContentIntent(tap)
-            .setAutoCancel(true)
-            .build()
-        context.getSystemService(NotificationManager::class.java).notify(ID_UPDATE, n)
     }
 
     private fun openApp(context: Context): PendingIntent = PendingIntent.getActivity(

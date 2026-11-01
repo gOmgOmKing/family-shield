@@ -11,7 +11,6 @@ import com.familyshield.app.lists.ListSources
 import com.familyshield.app.lists.ListStore
 import com.familyshield.app.lists.ListUpdater
 import com.familyshield.app.lists.UrlHttp
-import com.familyshield.app.update.UpdateSwitch
 import com.familyshield.app.vpn.BlockLog
 import java.io.File
 import java.io.IOException
@@ -60,9 +59,6 @@ class Shield(private val app: Context) {
     @Volatile var privateDnsStrict = false
     @Volatile var refreshing = false
 
-    /** 받아 놓고 사용자의 '설치'만 기다리는 새 버전 (안드로이드가 준 설치 창 열기). 앱이 다시 시작되면 사라지고 다음 확인 때 다시 만든다 */
-    @Volatile var pendingInstall: android.content.Intent? = null
-
     private val worker = Executors.newSingleThreadExecutor()
     private val refreshLock = Any()
 
@@ -74,14 +70,6 @@ class Shield(private val app: Context) {
         filter = f
         filterSize = f.blockSize
         filterBuildMs = android.os.SystemClock.elapsedRealtime() - started
-    }
-
-    /** 자동 업데이트 스위치 (오너가 GitHub lists/AUTO_UPDATE.txt 로 켜고 끔). 받은 사본이 없으면 앱에 들어 있는 기본값(끄기) */
-    fun selfUpdateOn(): Boolean {
-        val id = ListSources.UPDATE_SWITCH_ID
-        val downloaded = store.file(id)
-        val text = if (downloaded.exists()) downloaded.readText(Charsets.UTF_8) else openBundled(id)?.use { it.readText() }
-        return text != null && UpdateSwitch.isOn(text)
     }
 
     private fun openBundled(id: String): Reader? = try {
@@ -123,14 +111,6 @@ class Prefs(private val p: SharedPreferences) {
     var blockedTotal: Long
         get() = p.getLong("blockedTotal", 0)
         set(v) = p.edit().putLong("blockedTotal", v).apply()
-
-    var updateStatus: String?
-        get() = p.getString("updateStatus", null)
-        set(v) = p.edit().putString("updateStatus", v).apply()
-
-    var updateCheckedAt: Long
-        get() = p.getLong("updateCheckedAt", 0)
-        set(v) = p.edit().putLong("updateCheckedAt", v).apply()
 
     /** 안드로이드 10 이상에서만 알 수 있음. 모르면 null */
     var alwaysOn: Boolean?

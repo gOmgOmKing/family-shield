@@ -1,7 +1,6 @@
 package com.familyshield.app.lists
 
-/** SETTING = 주소 목록이 아닌 설정 파일 (자동 업데이트 스위치). 차단 규칙에는 들어가지 않는다 */
-enum class ListKind { BLOCK, ALLOW, SETTING }
+enum class ListKind { BLOCK, ALLOW }
 enum class NetworkRule { ANY, UNMETERED_ONLY }
 
 data class ListSource(

@@ -39,19 +39,6 @@ class OwnListsTest {
     }
 
     @Test
-    fun auto_update_switch_ships_turned_off() {
-        // Play 프로텍트가 스스로 업데이트를 막는다(docs/이력.md #2) — 오너가 GitHub 에서 직접 켜기 전엔 꺼져 있어야 한다
-        val f = File(listsDir, "AUTO_UPDATE.txt")
-        assertTrue("스위치 파일이 없음: ${f.absolutePath}", f.isFile)
-        assertFalse(com.familyshield.app.update.UpdateSwitch.isOn(f.readText()))
-    }
-
-    @Test
-    fun switch_file_adds_no_blocked_address() {
-        assertTrue(read("AUTO_UPDATE.txt").isEmpty())
-    }
-
-    @Test
     fun official_lottery_sites_stay_open_although_gambling_list_blocks_them() {
         // 2026-11-01 HaGeZi 도박 목록에 실제로 들어 있던 공식 주소들 (오너 결정: 공식 사행산업 사이트는 예외)
         val gamblingListEntries = listOf("dhlottery.co.kr", "bokgwon.go.kr", "klc.go.kr")

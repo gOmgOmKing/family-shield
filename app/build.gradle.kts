@@ -13,16 +13,13 @@ val keystoreProps = Properties().apply {
 }
 
 // 버전은 version.properties 한 곳에서만 (scripts/release.sh 가 올린다)
-val appVersionCode = (findProperty("shield.testVersionCode") as String?)?.toInt() // 업데이트 시험 빌드에서만 덮어씀
+val appVersionCode = (findProperty("shield.testVersionCode") as String?)?.toInt() // 시험 빌드에서만 덮어씀 (예: docs/이력.md #13 Play 프로텍트 시험)
     ?: Properties().apply {
         rootProject.file("version.properties").inputStream().use { load(it) }
     }.getProperty("versionCode").toInt()
 
-// 새 버전을 받아 오는 곳. 실제 배포(release)는 항상 GitHub Releases.
-// 시험 빌드(debug)만 -Pshield.testUpdateBaseUrl=http://127.0.0.1:포트 로 PC 를 가리킬 수 있다 (업데이트 시험용, docs/이력.md #2)
+// 폰이 직접 관리 목록을 받아 오는 저장소 (gradle.properties 한 곳)
 val githubRepo = property("shield.githubRepo") as String
-val releaseUpdateBaseUrl = "https://github.com/$githubRepo/releases/latest/download"
-val testUpdateBaseUrl = (findProperty("shield.testUpdateBaseUrl") as String?) ?: releaseUpdateBaseUrl
 
 android {
     namespace = "com.familyshield.app"
@@ -56,13 +53,11 @@ android {
         release {
             isMinifyEnabled = false
             signingConfig = signingConfigs.findByName("release")
-            buildConfigField("String", "UPDATE_BASE_URL", "\"$releaseUpdateBaseUrl\"")
         }
         // 시험 빌드: 이름('광고 방패 시험')·앱 ID 가 달라 진짜 앱과 따로 깔리고, 서명(디버그 열쇠)도 달라 진짜 앱을 덮어쓸 수 없다
         debug {
             applicationIdSuffix = ".test"
             versionNameSuffix = "-test"
-            buildConfigField("String", "UPDATE_BASE_URL", "\"$testUpdateBaseUrl\"")
         }
     }
 

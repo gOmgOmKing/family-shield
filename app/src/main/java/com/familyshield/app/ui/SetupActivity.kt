@@ -59,7 +59,7 @@ class SetupActivity : Activity() {
         }
 
         step(
-            "② 알림 허락", "보호가 꺼지거나 새 버전이 나왔을 때 알려 드립니다.",
+            "② 알림 허락", "보호가 꺼졌을 때 알려 드립니다.",
             "알림 허락하기", { notificationsAllowed() },
         ) { askNotifications() }
 
@@ -78,16 +78,7 @@ class SetupActivity : Activity() {
         ) { startActivity(Intent(Settings.ACTION_VPN_SETTINGS)) }
 
         step(
-            "⑤ 새 버전 설치 허락",
-            "자동 업데이트가 켜져 있을 때만 필요합니다. 켜져 있으면 '이 출처 허용'을 켜세요.",
-            "설치 허락 화면 열기", { if (shield.selfUpdateOn()) packageManager.canRequestPackageInstalls() else null },
-            unknownText = "⏸ 지금은 필요 없음 (자동 업데이트 꺼짐)",
-        ) {
-            startActivity(Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, Uri.parse("package:$packageName")))
-        }
-
-        step(
-            "⑥ 비공개 DNS 확인", "'비공개 DNS'(개인 DNS)가 직접 지정으로 켜져 있으면 광고가 막히지 않습니다. " +
+            "⑤ 비공개 DNS 확인", "'비공개 DNS'(개인 DNS)가 직접 지정으로 켜져 있으면 광고가 막히지 않습니다. " +
                 "설정에서 'DNS'를 검색해 '자동' 또는 '사용 안 함'으로 두세요.",
             "네트워크 설정 열기", { if (shield.vpnRunning) !shield.privateDnsStrict else null },
         ) { startActivity(Intent(Settings.ACTION_WIRELESS_SETTINGS)) }
