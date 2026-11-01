@@ -1,0 +1,66 @@
+# 토토 후보 관찰 — 관찰 전용, 차단에는 쓰지 않는다. 설명: collector/README.md
+# 하는 일: HaGeZi 목록 두 개를 받아 새 도메인 이름만 보고 판별 → 결과를 collector-data 브랜치의 collector/ 에 저장.
+# 후보 도메인에는 접속하지 않는다(HTTP·DNS 없음). AI 를 쓰지 않는다. 비밀값이 필요 없다.
+name: 토토 후보 관찰
+
+on:
+  schedule:
+    - cron: "17 10 * * *" # 매일 한국 시간 19:17 (HaGeZi 새 도메인 목록은 UTC 08:00 무렵 갱신)
+  workflow_dispatch: # GitHub 의 Actions 화면에서 'Run workflow' 로 직접 돌리기
+  push:
+    branches: [main]
+    paths:
+      - "collector/**"
+      - ".github/workflows/toto-collector.yml"
+
+permissions:
+  contents: write # 결과를 collector-data 브랜치에 저장
+
+concurrency:
+  group: toto-collector
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: 판별 규칙 시험 (실패하면 수집하지 않음)
+        working-directory: collector
+        run: python3 -m unittest discover -s tests
+
+      - name: 결과 브랜치 준비
+        run: |
+          if git ls-remote --exit-code --heads origin collector-data; then
+            git fetch --depth=1 origin collector-data
+            git worktree add --detach data FETCH_HEAD
+          else
+            git worktree add --detach data
+            git -C data checkout -q --orphan collector-data
+            git -C data rm -rfq .
+          fi
+
+      - name: 수집
+        id: collect
+        continue-on-error: true # 실패도 daily.tsv 에 남긴 뒤, 맨 아래 단계에서 빨간불
+        run: python3 collector/run.py data/collector
+
+      - name: 결과 저장 (collector-data 브랜치)
+        run: |
+          git -C data add collector
+          if git -C data diff --cached --quiet; then
+            echo "바뀐 것 없음"
+            exit 0
+          fi
+          git -C data -c user.name="github-actions[bot]" \
+            -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "관찰 결과 $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
+          git push origin "$(git -C data rev-parse HEAD):refs/heads/collector-data"
+
+      - name: 받기 실패 알림
+        if: steps.collect.outcome == 'failure'
+        run: |
+          echo "::error::목록 받기에 실패했습니다. collector-data 브랜치의 collector/daily.tsv 에 이유가 적혀 있습니다."
+          exit 1
