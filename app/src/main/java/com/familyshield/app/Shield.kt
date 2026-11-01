@@ -40,7 +40,7 @@ class Shield(private val app: Context) {
     val prefs = Prefs(app.getSharedPreferences("shield", Context.MODE_PRIVATE))
     val store = ListStore(File(app.filesDir, "lists"))
     val ownLists: List<ListSource> = ListSources.own(BuildConfig.GITHUB_REPO)
-    val communityLists: List<ListSource> = ListSources.community
+    val communityLists: List<ListSource> = ListSources.community(BuildConfig.GITHUB_REPO)
     val allLists: List<ListSource> = ownLists + communityLists
     val http = UrlHttp("FamilyShield/${BuildConfig.VERSION_NAME} (+https://github.com/${BuildConfig.GITHUB_REPO})")
     val blockLog = BlockLog(prefs.blockedTotal)

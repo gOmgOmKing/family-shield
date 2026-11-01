@@ -19,8 +19,8 @@ object ListSources {
         own(githubRepo, UPDATE_SWITCH_ID, "자동 업데이트 스위치", ListKind.SETTING),
     )
 
-    /** 커뮤니티 목록. 하루 한 번, 와이파이처럼 요금 안 드는 망에서만 받는다 (파일이 큼) */
-    val community: List<ListSource> = listOf(
+    /** 커뮤니티 목록과 토토 후보 목록. 하루 한 번, 와이파이처럼 요금 안 드는 망에서만 받는다 (파일이 큼) */
+    fun community(githubRepo: String): List<ListSource> = listOf(
         ListSource(
             "hagezi-pro", "HaGeZi Pro (광고·추적·사기)",
             "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt",
@@ -47,9 +47,16 @@ object ListSources {
             "https://cdn.jsdelivr.net/npm/@list-kr/filterslists@latest/dist/filterslist-DNS.txt",
             ListKind.BLOCK, NetworkRule.UNMETERED_ONLY, maxBytes = 2 * MB, minEntries = 100,
         ),
+        // 토토 후보 관찰기(collector/)가 매일 collector-data 브랜치에 쓰는 파일. 오너가 collector/차단스위치.txt 에서 켠 분류만 담긴다.
+        // 전부 끄기면 설명 줄만 있는 빈 목록이 정상이라 최소 0개. 봇이 2만 개(약 0.5MB)에서 멈추므로 상한 1MB
+        ListSource(
+            "toto-candidates", "토토 의심 새 주소 (스위치로 켠 분류만)",
+            "https://raw.githubusercontent.com/$githubRepo/collector-data/collector/block.txt",
+            ListKind.BLOCK, NetworkRule.UNMETERED_ONLY, maxBytes = 1 * MB, minEntries = 0,
+        ),
     )
 
-    fun all(githubRepo: String): List<ListSource> = own(githubRepo) + community
+    fun all(githubRepo: String): List<ListSource> = own(githubRepo) + community(githubRepo)
 
     private fun own(repo: String, id: String, label: String, kind: ListKind) = ListSource(
         id, label, "https://raw.githubusercontent.com/$repo/main/lists/$id.txt",
