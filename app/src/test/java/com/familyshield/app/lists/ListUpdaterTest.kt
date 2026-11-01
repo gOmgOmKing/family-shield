@@ -8,6 +8,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.TemporaryFolder
+import java.io.File
 
 class ListUpdaterTest {
 
@@ -163,6 +164,44 @@ class ListUpdaterTest {
         assertTrue(updater.update(listOf(small), unmetered = false))
         http.answers[small.url] = HttpResult.NotModified
         assertFalse(updater.update(listOf(small), unmetered = false))
+    }
+
+    /** 폰 저장 공간이 꽉 찬 것과 같은 실패: 임시 파일 자리에 쓸 수 없게 만든다 */
+    private fun makeSavingFail(source: ListSource) = File(store.dir, "${source.id}.txt.tmp").mkdirs()
+
+    @Test
+    fun shows_error_instead_of_crashing_when_phone_cannot_save_list() {
+        // 예외가 밖으로 나가면 안드로이드가 앱 전체를 끈다 — VPN(보호)도 같이 꺼진다
+        makeSavingFail(big)
+        http.answers[big.url] = HttpResult.Ok(goodBody.toByteArray(), "\"v1\"")
+
+        assertFalse(updater.update(listOf(big), unmetered = true))
+
+        assertFalse(store.file(big.id).exists())
+        assertNotNull(store.status(big.id).error)
+        assertNull("저장 못 한 목록의 ETag 를 남기면 다음에 304 만 받고 영영 못 받는다", store.status(big.id).etag)
+    }
+
+    @Test
+    fun other_lists_are_still_received_after_one_cannot_be_saved() {
+        makeSavingFail(big)
+        http.answers[big.url] = HttpResult.Ok(goodBody.toByteArray(), null)
+        http.answers[small.url] = HttpResult.Ok("x.com\n".toByteArray(), null)
+
+        updater.update(listOf(big, small), unmetered = true)
+
+        assertEquals("x.com\n", store.file(small.id).readText())
+    }
+
+    @Test
+    fun leaves_no_temp_file_behind_when_saving_fails() {
+        // 저장 공간이 꽉 찼을 때 반쯤 쓴 임시 파일이 남으면 폰의 남은 공간을 계속 차지한다
+        makeSavingFail(big)
+        http.answers[big.url] = HttpResult.Ok(goodBody.toByteArray(), null)
+
+        updater.update(listOf(big), unmetered = true)
+
+        assertEquals(emptyList<String>(), store.dir.list()!!.filter { it.endsWith(".tmp") })
     }
 
     @Test

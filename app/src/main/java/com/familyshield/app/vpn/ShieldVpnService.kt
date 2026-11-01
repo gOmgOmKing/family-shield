@@ -104,7 +104,12 @@ class ShieldVpnService : VpnService() {
                 }
             }
         }
-        val fwd = DnsForwarder(up, write) { problem -> shield.dnsProblem = problem }
+        val fwd = DnsForwarder(
+            servers = { up.servers },
+            bindToNetwork = { s -> up.network?.bindSocket(s) },
+            writeToTun = write,
+            onProblem = { problem -> shield.dnsProblem = problem },
+        )
         val pipe = Os.pipe()
 
         tun = iface

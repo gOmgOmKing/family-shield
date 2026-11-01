@@ -1,6 +1,7 @@
 package com.familyshield.app.lists
 
 import java.io.File
+import java.io.IOException
 import java.util.Properties
 
 /** 화면에 보여 줄 목록 상태. 값이 없으면(아직 한 번도 못 받음) null 그대로 둔다 */
@@ -94,12 +95,18 @@ class ListStore(val dir: File) {
         return w.toString().toByteArray(Charsets.UTF_8)
     }
 
+    /** 실패하면 IOException. 반쯤 쓴 임시 파일은 지운다 — 저장 공간이 꽉 찼을 때 남은 공간을 계속 차지하지 않게 */
     private fun writeAtomically(target: File, bytes: ByteArray) {
         val tmp = File(target.parentFile, target.name + ".tmp")
-        tmp.writeBytes(bytes)
-        if (!tmp.renameTo(target)) {
-            target.delete()
-            check(tmp.renameTo(target)) { "파일 저장 실패: ${target.name}" }
+        try {
+            tmp.writeBytes(bytes)
+            if (!tmp.renameTo(target)) {
+                target.delete()
+                if (!tmp.renameTo(target)) throw IOException("파일 저장 실패: ${target.name}")
+            }
+        } catch (e: IOException) {
+            tmp.delete()
+            throw e
         }
     }
 

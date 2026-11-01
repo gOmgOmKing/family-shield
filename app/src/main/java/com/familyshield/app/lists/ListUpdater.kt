@@ -1,6 +1,7 @@
 package com.familyshield.app.lists
 
 import com.familyshield.app.filter.ListParser
+import java.io.IOException
 import java.net.URI
 
 /**
@@ -60,8 +61,14 @@ class ListUpdater(
             store.markFailure(source.id, "주소가 너무 적음 (${entries}개)", now())
             return false
         }
-        store.saveDownload(source.id, r.body, r.etag, entries, now())
-        return true
+        return try {
+            store.saveDownload(source.id, r.body, r.etag, entries, now())
+            true
+        } catch (e: IOException) {
+            // 예외가 밖으로 나가면 안드로이드가 앱 전체(보호 포함)를 끈다. 마지막 정상본으로 계속 막고 화면에 알린다
+            store.markFailure(source.id, "폰에 저장하지 못했습니다 — 폰 저장 공간을 확인해 주세요", now())
+            false
+        }
     }
 
     private fun looksLikeWebPage(body: ByteArray): Boolean {
