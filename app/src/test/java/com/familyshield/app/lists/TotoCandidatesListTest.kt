@@ -54,7 +54,7 @@ class TotoCandidatesListTest {
         http.answers[totoUrl] = HttpResult.Ok(body.toByteArray(), "\"v2\"")
         updater.update(listOf(toto), unmetered = true)
 
-        val f = FilterBuilder.build(sources, store, { id -> File(listsDir, "$id.txt").takeIf { it.isFile }?.reader() }, coupangOn = true)
+        val f = FilterBuilder.build(sources, store, { id -> File(listsDir, "$id.txt").takeIf { it.isFile }?.reader() })
 
         assertTrue(f.isBlocked("betkrw33.xyz"))
         assertTrue(f.isBlocked("www.betkrw33.xyz"))

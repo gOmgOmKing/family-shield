@@ -70,7 +70,7 @@ class Shield(private val app: Context) {
 
     private fun rebuildFilter() {
         val started = android.os.SystemClock.elapsedRealtime()
-        val f = FilterBuilder.build(allLists, store, ::openBundled, prefs.coupangOn)
+        val f = FilterBuilder.build(allLists, store, ::openBundled)
         filter = f
         filterSize = f.blockSize
         filterBuildMs = android.os.SystemClock.elapsedRealtime() - started
@@ -119,10 +119,6 @@ class Prefs(private val p: SharedPreferences) {
     var protectionWanted: Boolean
         get() = p.getBoolean("protectionWanted", false)
         set(v) = p.edit().putBoolean("protectionWanted", v).apply()
-
-    var coupangOn: Boolean
-        get() = p.getBoolean("coupangOn", true)
-        set(v) = p.edit().putBoolean("coupangOn", v).apply()
 
     var blockedTotal: Long
         get() = p.getLong("blockedTotal", 0)

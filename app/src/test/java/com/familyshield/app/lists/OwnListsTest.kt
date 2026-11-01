@@ -5,13 +5,22 @@ import com.familyshield.app.filter.DomainSet
 import com.familyshield.app.filter.ListParser
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
+import org.junit.Rule
 import org.junit.Test
+import org.junit.rules.TemporaryFolder
 import java.io.File
+import java.io.Reader
 
 /** 저장소 lists/ 의 실제 파일을 읽어, 꼭 열려야 하는 주소를 막지 않는지 지킨다 */
 class OwnListsTest {
 
+    @get:Rule
+    val tmp = TemporaryFolder()
+
     private val listsDir = File("../lists").takeIf { it.isDirectory } ?: File("lists")
+
+    /** 앱에 들어 있는 사본 = 저장소 lists/ 의 파일 */
+    private fun bundled(id: String): Reader? = File(listsDir, "$id.txt").takeIf { it.isFile }?.reader()
 
     private fun read(name: String): List<String> {
         val f = File(listsDir, name)
@@ -57,6 +66,15 @@ class OwnListsTest {
         val f = DomainFilter(DomainSet.of(listOf("nlotto.co.kr", "dhlottery-event.com")), DomainSet.of(read("allow.txt")))
         assertTrue(f.isBlocked("nlotto.co.kr"))
         assertTrue(f.isBlocked("dhlottery-event.com"))
+    }
+
+    @Test
+    fun coupang_partner_ads_are_always_blocked_and_family_links_stay_open() {
+        // '쿠팡 광고 막기' 스위치는 없앰(오너 결정 2026-11-01). 예전에 꺼 둔 폰도 업데이트 뒤엔 똑같이 막아야 한다
+        val f = FilterBuilder.build(ListSources.all("owner/family-shield"), ListStore(tmp.newFolder("lists")), ::bundled)
+        assertTrue(f.isBlocked("ads-partners.coupang.com"))
+        assertFalse(f.isBlocked("link.coupang.com"))
+        assertFalse(f.isBlocked("www.coupang.com"))
     }
 
     @Test

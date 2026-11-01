@@ -9,7 +9,6 @@ import android.os.Handler
 import android.os.Looper
 import android.provider.Settings
 import android.widget.Button
-import android.widget.Switch
 import android.widget.TextView
 import com.familyshield.app.BuildConfig
 import com.familyshield.app.lists.ListKind
@@ -29,7 +28,6 @@ class MainActivity : Activity() {
     private lateinit var privateDnsButton: Button
     private lateinit var refreshButton: Button
     private lateinit var refreshNote: TextView
-    private lateinit var coupang: Switch
     private lateinit var recent: TextView
     private lateinit var lists: TextView
     private lateinit var updateSwitchLine: TextView
@@ -65,18 +63,6 @@ class MainActivity : Activity() {
         }.also { c.addView(it) }
         refreshButton = Ui.button(this, "지금 새로고침") { refreshNow() }.also { c.addView(it) }
         refreshNote = Ui.body(this, size = 18f).apply { setTextColor(Ui.GRAY) }.also { c.addView(it) }
-
-        coupang = Switch(this).apply {
-            text = "쿠팡 광고 막기"
-            textSize = 22f
-            minHeight = Ui.dp(this@MainActivity, 64)
-            isChecked = shield.prefs.coupangOn
-            setOnCheckedChangeListener { _, on ->
-                shield.prefs.coupangOn = on
-                shield.rebuildFilterInBackground()
-            }
-        }
-        c.addView(coupang)
 
         c.addView(Ui.heading(this, "최근 막은 주소"))
         recent = Ui.body(this, size = 18f).also { c.addView(it) }

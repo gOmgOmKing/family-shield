@@ -12,14 +12,12 @@ object FilterBuilder {
         sources: List<ListSource>,
         store: ListStore,
         openBundled: (id: String) -> Reader?,
-        coupangOn: Boolean,
     ): DomainFilter {
         val block = DomainSet.Builder()
         val allow = DomainSet.Builder()
         for (source in sources) {
             val target = when (source.kind) {
                 ListKind.BLOCK -> block
-                ListKind.COUPANG -> if (coupangOn) block else continue
                 ListKind.ALLOW -> allow
                 ListKind.SETTING -> continue
             }

@@ -18,15 +18,14 @@ class FilterBuilderTest {
         ListSource(id, id, "https://example.org/$id.txt", kind, NetworkRule.ANY, 1000, 0)
 
     private val block = src("block", ListKind.BLOCK)
-    private val coupang = src("coupang", ListKind.COUPANG)
     private val allow = src("allow", ListKind.ALLOW)
     private val community = src("community", ListKind.BLOCK)
 
     private val bundled = mutableMapOf<String, String>()
     private fun openBundled(id: String): Reader? = bundled[id]?.reader()
 
-    private fun build(coupangOn: Boolean = true) =
-        FilterBuilder.build(listOf(block, coupang, allow, community), store, ::openBundled, coupangOn)
+    private fun build() =
+        FilterBuilder.build(listOf(block, allow, community), store, ::openBundled)
 
     private fun download(source: ListSource, body: String) {
         store.saveDownload(source.id, body.toByteArray(), etag = null, entries = 1, now = 1)
@@ -46,13 +45,6 @@ class FilterBuilderTest {
         val f = build()
         assertTrue(f.isBlocked("new.example.com"))
         assertFalse(f.isBlocked("old.example.com"))
-    }
-
-    @Test
-    fun coupang_list_blocks_only_when_switch_is_on() {
-        bundled["coupang"] = "ads-partners.coupang.com\n"
-        assertTrue(build(coupangOn = true).isBlocked("ads-partners.coupang.com"))
-        assertFalse(build(coupangOn = false).isBlocked("ads-partners.coupang.com"))
     }
 
     @Test

@@ -14,7 +14,7 @@ object ListSources {
     /** 오너가 GitHub 에서 직접 고치는 목록과 스위치. 몇 시간마다, 어떤 망에서든 받는다 (파일이 작음) */
     fun own(githubRepo: String): List<ListSource> = listOf(
         own(githubRepo, "block", "직접 관리 차단 목록", ListKind.BLOCK),
-        own(githubRepo, "coupang", "쿠팡 파트너스 목록", ListKind.COUPANG),
+        own(githubRepo, "coupang", "쿠팡 파트너스 목록", ListKind.BLOCK), // 늘 적용 ('쿠팡 광고 막기' 스위치는 2026-11-01 없앰)
         own(githubRepo, "allow", "허용 목록", ListKind.ALLOW),
         own(githubRepo, UPDATE_SWITCH_ID, "자동 업데이트 스위치", ListKind.SETTING),
     )
