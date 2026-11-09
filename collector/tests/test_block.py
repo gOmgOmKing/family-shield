@@ -16,12 +16,12 @@ def ledger_with(entries, today="2026-11-01"):
 
 
 class Switch(unittest.TestCase):
-    def test_shipped_switch_file_has_every_category_and_all_are_off(self):
+    def test_shipped_switch_file_has_every_category(self):
+        # 켜기·끄기는 오너가 고르는 값이라 보지 않는다. 이 시험이 실패하면 수집 전체가 멈춘다(이력 #28).
         with open(SWITCH_PATH, encoding="utf-8") as f:
-            text = f.read()
-        for c in CATEGORIES:
-            self.assertIn(f"{c}: 끄기", text)
-        self.assertEqual(read_switch(text), set())
+            lines = [line.split("#", 1)[0] for line in f]
+        names = {line.split(":", 1)[0].strip() for line in lines if ":" in line}
+        self.assertLessEqual(set(CATEGORIES), names)
 
     def test_on_category_is_enabled(self):
         self.assertEqual(read_switch("한글도박어: 켜기\n번호돌림: 끄기\n"), {"한글도박어"})
