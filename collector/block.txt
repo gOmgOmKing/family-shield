@@ -1,9 +1,10 @@
 # 토토 후보 차단 목록 — 자동 생성, 손으로 고치지 마세요
 # collector/차단스위치.txt 에서 '켜기' 로 한 분류의 후보만 들어갑니다. 설명: collector/README.md
 # 출처: HaGeZi 새 도메인 목록(GPL-3.0, 원자료 Stamus Labs)에서 이름만 보고 고른 후보
-# 만든 시각: 2026-11-12 20:09 (한국 시간)
+# 만든 시각: 2026-11-13 20:05 (한국 시간)
 # 켠 분류: 한글도박어, 한글주소안내, 로마자토토어, 번호돌림, .kr도박어
-# 개수: 525
+# 개수: 534
+1x-casino-slots.kr
 anonymous-casino.co.kr
 baccarat-sites.co.kr
 betkrw213z.vip
@@ -47,6 +48,7 @@ xn--220b21dv7dovnuueqsg6pu.com
 xn--220b21kbxe3vfulfqsg.com
 xn--220b23o2wgj2dn5a2zj.com
 xn--220b32rh5ernbqxfqwhlmg.com
+xn--220b50x9pc85avygqph8su.com
 xn--220b58ldmdy4gulf91e4vb.com
 xn--220b58lv7h85avyg2rdjten8u.com
 xn--220b85u42a69fu5fjxdopd.com
@@ -80,6 +82,7 @@ xn--220bv2fbui1lgwsdrscuxbl04d.com
 xn--220bv2fu5c71h4qf5ngtoh.com
 xn--220bx6b6y3a78ixkda.com
 xn--220bz2lp4d30fulf8obc1j.com
+xn--247-hy7mt18aj2bqzm71d7xm.com
 xn--299a331aetehon.com
 xn--299a331amha98k5ttd8i.com
 xn--299a331amha98k5ttd8i.net
@@ -149,6 +152,7 @@ xn--3o2bm9m9oa48ab2rksljwf.com
 xn--3v0b3rh8zk4eulfqsg.com
 xn--6i0bp5c08bv2qk6f57ftoh.com
 xn--739a882antdda354flmb.com
+xn--739av1ghxmdtiowb18a.com
 xn--88-q35i57t7mj.shop
 xn--910b3b271ewjak3nqsg.com
 xn--950b7f267cihe81g0ue.com
@@ -329,6 +333,8 @@ xn--hy1b84gp0c30f720a3ob68c.com
 xn--hy1b84gp0c30f9yan04alsqp5b63d.com
 xn--hy1b84gp0c31g8vkfvouyd.com
 xn--hy1b84gp0chr7a8tc.com
+xn--hy1bk0eixe35f7mh3wd.com
+xn--hy1bk0eixeh2m.com
 xn--hy1br1u9oa51v74n67b.com
 xn--hy1br1u9oa51v74n67b.net
 xn--hy1br2mo8du7id3p.com
@@ -357,6 +363,7 @@ xn--mp2b70qfxn.com
 xn--mp2b70qfxna.com
 xn--mp2b70qpkd68t.com
 xn--mp2b70qt3f.com
+xn--mp2bs6hp9d63v.com
 xn--mp2bswp1r6vc.net
 xn--msi-r28oa.com
 xn--o01b06l98a.com
@@ -387,6 +394,7 @@ xn--o80b96rx3dt5grvdnrjn3h0rb.com
 xn--o80bl47baa331d.com
 xn--o80bl47bgkd5xd.com
 xn--o80bl8joqohhc81in8c.com
+xn--o80bl8jqzizie96fn5h.net
 xn--o80bn2vokhhlc81i.com
 xn--o80bo5sa455k8qf.com
 xn--o80bo73avlcoxf87g.com
@@ -410,6 +418,7 @@ xn--o80brsu2zdpdjsk3rc15lfpp.com
 xn--o80brsu2zzpjue52k1ulfpp.com
 xn--o80bt8vgtat8w91cn0j.com
 xn--o80bu34ah5eu7e8tg.com
+xn--o80bw5kp1dowq8vfynb.com
 xn--o80bw9m6pgzoj85f.com
 xn--o80bx81ar0dytd8yh.com
 xn--o80bx81ar0dytd8yh.net
