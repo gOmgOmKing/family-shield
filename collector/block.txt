@@ -1,9 +1,9 @@
 # 토토 후보 차단 목록 — 자동 생성, 손으로 고치지 마세요
 # collector/차단스위치.txt 에서 '켜기' 로 한 분류의 후보만 들어갑니다. 설명: collector/README.md
 # 출처: HaGeZi 새 도메인 목록(GPL-3.0, 원자료 Stamus Labs)에서 이름만 보고 고른 후보
-# 만든 시각: 2026-11-14 19:48 (한국 시간)
+# 만든 시각: 2026-11-15 19:49 (한국 시간)
 # 켠 분류: 한글도박어, 한글주소안내, 로마자토토어, 번호돌림, .kr도박어
-# 개수: 576
+# 개수: 596
 1wincasinoguide.kr
 1x-casino-slots.kr
 anonymous-casino.co.kr
@@ -19,6 +19,7 @@ betkrw471i.club
 betkrw582l.club
 betpanda-casino-games.co.kr
 cabtotosite.com
+cantiktotosite.com
 casino-sites-korea.co.kr
 casinogames.co.kr
 ihcasino.co.kr
@@ -27,6 +28,7 @@ kingdomtoto-site.com
 krvip12l6.vip
 krvip23i8.vip
 krvip34l7.vip
+krwin888.com
 melbet-slots.kr
 mika-toto-site.com
 mtpolice.xyz
@@ -42,6 +44,7 @@ semuttoto-site.com
 slotistes.co.kr
 sportstotosite.net
 top1totosite.com
+totositefamily.com
 totositegorilla.com
 totositetop.com
 totositeweb.com
@@ -115,6 +118,7 @@ xn--299as4k8odbrd7sl7jkrvv.net
 xn--299as4k92ff3c9tg7zlplkc2m.com
 xn--299as4k92ff3c9tg7zlplkc2m.net
 xn--2e0b75d37cr6mk6f57ftoh7sb.com
+xn--2e0bt30aw7ha.com
 xn--2i0bx5chxq3zeulfhxaq6n.com
 xn--2i0bx5chxq3zeulfqsge1y.com
 xn--2i0bx5chxqdtiowb18as70d.com
@@ -159,6 +163,17 @@ xn--739a882antdda354flmb.com
 xn--739av1ghxmdtiowb18a.com
 xn--88-q35i57t7mj.shop
 xn--910b3b271ewjak3nqsg.com
+xn--911-533mq6x08jjtlu4x.com
+xn--911-533mq6x08jjtlu4x.net
+xn--911-d24nl1an04a7ms.com
+xn--911-d24nl1an04a7ms.net
+xn--911-jl1n.net
+xn--911-jl1n705fa.com
+xn--911-jl1n87q6zk.com
+xn--911-jl1ns0o93a126a75u.com
+xn--911-jl1ns0on46a.com
+xn--911-r28oa.com
+xn--911-y61mh58gn5f.com
 xn--939a382aqibp2n.com
 xn--950b52ttxgdpc.com
 xn--950b7f267cihe81g0ue.com
@@ -173,6 +188,7 @@ xn--9g4bom60aw9p6nkhjdegz8c.net
 xn--9g4bom60aw9p7nkojbv6g.com
 xn--9g4bom60az5l53b6xpbvi.net
 xn--9g4bomh8p4sj4uc.com
+xn--9g4bomh8p75i9kdizd.com
 xn--9g4bomh8pdviuyd.com
 xn--9g4bomh8pmwaa825m.com
 xn--9g4bomh8pmwaa825m.net
@@ -463,6 +479,7 @@ xn--ob0bn6iirj43eexbw2qdls.com
 xn--ob0bn6iirjnmg1tw.com
 xn--ob0bn6iirjnmg1twboe.com
 xn--ob0bo6iirjkmg5tw.com
+xn--ob0bo9fzvs27c90b2zf14k75a.com
 xn--ob0br1tw9hjoh.com
 xn--ob0bz8zboaw3r12fhxbs58a.com
 xn--oi2b171a3qfgrf6ob.com
@@ -478,6 +495,8 @@ xn--oi2bx1p9oa44mq1d4wujfb.net
 xn--oi2bx2hv3ao4gt0b49lqyc71m.com
 xn--oi2by2hl1ks2i.com
 xn--ok0b06q0obky3c.com
+xn--ok0bm0vglfjmggg89f.com
+xn--ok0bm0vglfjmggg89f.net
 xn--ok0bt1ctxrb2eulfb2aw7ai1bjxh436a.com
 xn--or3bo5d9o3n820a7zq.com
 xn--or3bo5d9o3n820a7zq.net
@@ -556,6 +575,7 @@ xn--tl3bz87a.net
 xn--toc-y61mh58gn5f.com
 xn--v01b67owrc3tbp2p7xgs1n.net
 xn--v31br7s9oa42qb4br2nbzj.com
+xn--v69al9gc7ld4j9zcn0j.net
 xn--v92b29i42ama439ed1exnc.net
 xn--v92bj1ak9k3vk.com
 xn--v92bk1an0iqpb52pd1e.net
