@@ -1,9 +1,9 @@
 # 토토 후보 차단 목록 — 자동 생성, 손으로 고치지 마세요
 # collector/차단스위치.txt 에서 '켜기' 로 한 분류의 후보만 들어갑니다. 설명: collector/README.md
 # 출처: HaGeZi 새 도메인 목록(GPL-3.0, 원자료 Stamus Labs)에서 이름만 보고 고른 후보
-# 만든 시각: 2026-11-17 20:08 (한국 시간)
+# 만든 시각: 2026-11-18 20:10 (한국 시간)
 # 켠 분류: 한글도박어, 한글주소안내, 로마자토토어, 번호돌림, .kr도박어
-# 개수: 643
+# 개수: 656
 1wincasinoguide.kr
 1x-casino-slots.kr
 anonymous-casino.co.kr
@@ -26,8 +26,12 @@ casinogames.co.kr
 ihcasino.co.kr
 jeparatotosite.com
 kingdomtoto-site.com
+korwin12i7.com
+korwin24i9.com
 korwin25i7.vip
+korwin35l7.com
 korwin36i8.vip
+korwin43l9.com
 korwin47l9.vip
 korwin58l1.vip
 krvip12l6.vip
@@ -189,6 +193,7 @@ xn--939a382aqibp2n.com
 xn--950b52ttxgdpc.com
 xn--950b7f267cihe81g0ue.com
 xn--9b6ba260bg6f.com
+xn--9g3bklr6m.org
 xn--9g4bnmb727eca088goyh.site
 xn--9g4bom59hn0d7vgovl.com
 xn--9g4bom60a10f9wdj1c743a.net
@@ -418,7 +423,14 @@ xn--lpl-r28oa.com
 xn--ly1bq3iba961elvh8tc.com
 xn--mcm-533mq6x08jjtlu4x.com
 xn--mcm-d24nl1an04a7ms.com
+xn--meta-e68pp97i14g.com
+xn--meta-e68pq65bf1ygli.com
 xn--meta-eh5qp4t2w8a.com
+xn--meta-eh5qy7mfxch52d.com
+xn--meta-es2ta.com
+xn--metamall-sl70ba.com
+xn--metamall-z364a803nn2k.com
+xn--metamall-zf85a89zo24c.com
 xn--mk1bo0zgsfvsgxtda.com
 xn--mk1br1l4wseqca16k.com
 xn--mp2b70q50d1nj.com
@@ -450,6 +462,7 @@ xn--o80b41u3tc9ta2q994aekbg2tcpm.net
 xn--o80b41u68cvmg5w3rc15l.com
 xn--o80b41unrd93gue52k1ul.com
 xn--o80b41unrdi3j85f.net
+xn--o80b41unrdi3j85f.org
 xn--o80b41uwpcltbd5nztd14kzzi.com
 xn--o80b454aq2eumf89c.com
 xn--o80b65lh3gbrj80f6zi.com
