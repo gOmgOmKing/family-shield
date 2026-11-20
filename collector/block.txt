@@ -1,9 +1,9 @@
 # 토토 후보 차단 목록 — 자동 생성, 손으로 고치지 마세요
 # collector/차단스위치.txt 에서 '켜기' 로 한 분류의 후보만 들어갑니다. 설명: collector/README.md
 # 출처: HaGeZi 새 도메인 목록(GPL-3.0, 원자료 Stamus Labs)에서 이름만 보고 고른 후보
-# 만든 시각: 2026-11-19 20:07 (한국 시간)
+# 만든 시각: 2026-11-20 20:08 (한국 시간)
 # 켠 분류: 한글도박어, 한글주소안내, 로마자토토어, 번호돌림, .kr도박어
-# 개수: 703
+# 개수: 757
 1wincasinoguide.kr
 1x-casino-slots.kr
 anonymous-casino.co.kr
@@ -57,6 +57,7 @@ sportstotosite.net
 top1totosite.com
 toto-site-build.com
 totomeoktwiblog.com
+totosite-ko.com
 totosite.store
 totositefamily.com
 totositegorilla.com
@@ -128,6 +129,7 @@ xn--299am02a9zc9tap20a5rgcrm.com
 xn--299am02a9zc9tap20a5rgcrm.net
 xn--299am02afkm45da.com
 xn--299am02afkm45da.net
+xn--299ao5sqvd.com
 xn--299aq6e08hpskuueqsg.com
 xn--299aq6em5b80z8qbl5ft9hnkw.com
 xn--299ard74jrsk48l5nftoh.com
@@ -183,6 +185,8 @@ xn--3h3bm9fei5k07u25cmsy0nb4t.net
 xn--3o2bm9m9oa48ab2rksljwf.com
 xn--3v0b3rh8zk4eulfqsg.com
 xn--3v0bp9vnwdu7i.com
+xn--4-dx2fg8jv3h.com
+xn--5-dx2fg8jv3h.com
 xn--6i0bp5c08bv2qk6f57ftoh.com
 xn--739a882antdda354flmb.com
 xn--739av1ghxmdtiowb18a.com
@@ -218,7 +222,11 @@ xn--9g4bom60aw9p7nkojbv6g.com
 xn--9g4bom60aw9pr9df9n.com
 xn--9g4bom60az5l53b6xpbvi.net
 xn--9g4bomh8p4sj4uc.com
+xn--9g4bomh8p73fjkgr8a.com
 xn--9g4bomh8p75i9kdizd.com
+xn--9g4bomh8p7pah52atvd.com
+xn--9g4bomh8p86kz2a.com
+xn--9g4bomh8p86kz2a.net
 xn--9g4bomh8pdviuyd.com
 xn--9g4bomh8pmwaa825m.com
 xn--9g4bomh8pmwaa825m.net
@@ -227,8 +235,10 @@ xn--9g4bomi0m3ub71ao45b.net
 xn--9g4boml3g9uaba198b7yw.com
 xn--9g4bomm4kupc78u.com
 xn--9g4bomo6ah2fba198b7yw.com
+xn--9g4bomp1hpse7ur1nd.com
 xn--9g4bomq6nwza796a2qb.net
 xn--9g4bomr9au5m7xkhre.com
+xn--9g4bomt9h30d70n90d7sc.com
 xn--9g4bomv9hj3am9e7rye6b.com
 xn--9g4bomz9kg7b63s3kc.com
 xn--9g4bvimfv4pc6d77u.net
@@ -244,6 +254,8 @@ xn--9l4b1tpft5u73f0xfiqe9g.com
 xn--9l4b1tpft5u73f0xfiqe9g.net
 xn--9l4b1tv1mf1ib6aa17u9g.com
 xn--9l4b9xc8k71e80j.com
+xn--9l4b9xc8k71ejoi.com
+xn--9l4b9xc8k71ejoi.net
 xn--9l4b9xk1dm4e71g.com
 xn--9l4b9xp6c3xf7vg7yk.com
 xn--9l4b9xp6cuzac8h7pinokf9e.com
@@ -272,6 +284,7 @@ xn--9m1bs1pk4ar7e9ya08vild7w3a.net
 xn--9m1bs1pk4av3g31ilob.com
 xn--9m1bs1pk4ayyu99ma.com
 xn--9m1bs1pk4ayyupoagg.com
+xn--9m1bt1pi4ak8q95b.com
 xn--9m1bv2fqtfmpb.com
 xn--9m1bw7ncqa72os1hrf.com
 xn--9m1bw7ncqa72os1hrf.net
@@ -283,12 +296,14 @@ xn--9m1bw7ncqai7k9yacte60b75u.net
 xn--9r2b17bi1i3nb36jlnd7xkrmk.com
 xn--9t4b11d99at9o8pg.com
 xn--9t4b11xitaa79nif.com
+xn--9t4bp8dm9ma17q.com
 xn--9w3bo1c9oo9i7rdk1c4tqdtj.com
 xn--9y2b23k9oa51v7tja141d.com
 xn--9y2b23k9oa51v7tjv5e.com
 xn--9y2bnqb761elvhca231al9u.net
 xn--9y2boqa961elvh8tc0tt.com
 xn--9y2boqa961elvh8tc0tt.net
+xn--9y2bx7c26z.com
 xn--audi-e94r15a126a75u.com
 xn--audi-el1q682atplu0mx40a.com
 xn--bb0b15egtehtquqebpc94f8v5a.com
@@ -395,6 +410,8 @@ xn--hq1bm8jm2flsh57oepbmzm.com
 xn--hq1bm8jm2flsh57oepbmzm.net
 xn--hq1bm8jm2flshl3ca790p.com
 xn--hq1bm8jm2flshl3ca790p.net
+xn--hq1bm8jm2flshvqpq8a.com
+xn--hq1bm8jm2flshvqpq8a.net
 xn--hq1bm8jm2fn7bjzfba37zur1b.com
 xn--hq1bm8jm2fuzej0aba37zur1b.com
 xn--hq1bm8jm2fw9edycovp9lj.com
@@ -416,6 +433,8 @@ xn--hq1btuk1kfxhwzioit0lc.net
 xn--hq1bx4fp5bf5kt5g53b6a440u7sc.com
 xn--hq1bx4fp5bf5kt5g53b6a440u7sc.net
 xn--hq1bxyi9ifxh7zfomcexbu57c.com
+xn--hu1b80mwna975a.com
+xn--hu1b80mwnae9m7piinc.com
 xn--hy1b43d3vlda641cnrebzbc9y.com
 xn--hy1b43ds7ejb555bj6b2ys7xi.net
 xn--hy1b84gn0c20fd30axobe9c.com
@@ -439,7 +458,14 @@ xn--hy1br2mo8du7id3p.com
 xn--hy1br2motd9tap20a7jq0nc.com
 xn--hy1br2muf242a.com
 xn--hy1bs2m98v.com
+xn--hz2bo3k9oa32qc4b5xp4dy51b.com
 xn--i49alo52m8ll6ufey0ac5c.com
+xn--ibw-533mq6x08jjtlu4x.com
+xn--ibw-533mq6x08jjtlu4x.net
+xn--ibw-d24nl1an04a7ms.com
+xn--ibw-d24nl1an04a7ms.net
+xn--ibw-jl1n.com
+xn--ibw-y61mh58gn5f.com
 xn--ij2bu3cvyeq41a.com
 xn--iq1b38p7yqa.com
 xn--iq1bj3ohsa.com
@@ -453,6 +479,8 @@ xn--jt2bk8l9oa51v75g9ri.com
 xn--jt2bk8l9oa51v75g9ri.net
 xn--jt2bx0hb4c3sbp2p7xgszk.com
 xn--k-377es52buhh71an0s.com
+xn--k-pp1fj5p9tap20ah9ihri.com
+xn--kmarket-hv53a97b8x4b751a.com
 xn--l32b36bt5l42e.com
 xn--l32b36bt5lgqm.com
 xn--lck-r28oa.com
@@ -476,12 +504,14 @@ xn--mp2b70qdxna.com
 xn--mp2b70qfxn.com
 xn--mp2b70qfxna.com
 xn--mp2b70qpkd68t.com
+xn--mp2b70qr2m.com
 xn--mp2b70qt3f.com
 xn--mp2bs6hp9d63v.com
 xn--mp2bswp1r6vc.net
 xn--msi-r28oa.com
 xn--o01b06l98a.com
 xn--o01b06l98af4f8tm.com
+xn--o39an5b76dv4j81emocuzmpwqu4j.com
 xn--o39an5bf2pfc1xg3j4wb19z.com
 xn--o39an5bf2pglc97b75npokxld.site
 xn--o39an5bfzg9vg85ei1ag85i.com
@@ -515,11 +545,13 @@ xn--o80b87du8c26n8kjt7a1ys.com
 xn--o80b96rx3dt5grvdnrjn3h0rb.com
 xn--o80bl47baa331d.com
 xn--o80bl47bgkd5xd.com
+xn--o80bl47bgkd9rf.net
 xn--o80bl8j77m6hbb6en0jrnm.com
 xn--o80bl8joqohhc81in8c.com
 xn--o80bl8jqzizie96fn5h.net
 xn--o80bm3sk8ar3y8vf.com
 xn--o80bn2vokhhlc81i.com
+xn--o80bn8j0yiz2ac1tt7a1ys.com
 xn--o80bo5sa455k8qf.com
 xn--o80bo73avlcoxf87g.com
 xn--o80bo7bvzeh6d80s3rf16i.com
@@ -554,16 +586,23 @@ xn--o80bw5kp1dowq8vfynb.com
 xn--o80bw9m6pgzoj85f.com
 xn--o80bx81ar0dytd8yh.com
 xn--o80bx81ar0dytd8yh.net
+xn--o80bxyb32a6lebqgn5hc4j.com
+xn--o80bxyb32a9tam2mrogeobg2tcpm.com
 xn--o80by1b76xzsdc0ft7a1ys.com
 xn--o80by1br44aihe81g.com
 xn--o80by50a9jb12ib8c6xg4yc4xq.com
 xn--o80by50a9jb12ib8c6xg4yc4xq.net
+xn--o80by50a9ugu3ejwgo8a.com
 xn--o80by81a7xa14lc5bt7a69lj7c.net
+xn--o80by81ae3a08m61ap2n64bb0p.com
+xn--o80by81ae3a08m61ap2n64bb0p.net
 xn--o80by81ae3a08m61ap2n64bkxj.com
+xn--o80by81agsfmwa85osrh.net
 xn--o80byyn8q08o8qfjtaw0u.net
 xn--o80bz44a33eu7e8pk.com
 xn--o80bz50a7jb12ib8c6xg4yccyq.com
 xn--o80bz50a7jb12ib8c6xg4yccyq.net
+xn--o80bz50a7ugu3ejwgt8a.com
 xn--o80bz50a9oa38a85mkpcevb69mxpdc4s.com
 xn--o80bz50a9oa38a85mkpcevb69mxpdc4s.net
 xn--ob0b542b6eu5i9tcmusuri.com
@@ -600,9 +639,13 @@ xn--om2bo5n9oao1moxbjwd743azjc.com
 xn--om2bo5n9oao1moxbjwd743azjc.net
 xn--or3bo5d9o3n820a7zq.com
 xn--or3bo5d9o3n820a7zq.net
+xn--oy2bj1c9zf9tag8litgyym42i.com
 xn--oy2bj9c91kmyk.com
+xn--oy2bj9c91kmyk.net
 xn--oy2bk9ce11a.com
+xn--oy2bo5k9oan5ofva33e743a.com
 xn--p22b015avvc0sc.com
+xn--p22b015avvc0sc.org
 xn--pk3bl5o9ip99aa.com
 xn--pk3bl5o9ip99aa.net
 xn--pk3bm5ge3ad3f9om1k7zj.com
@@ -623,8 +666,11 @@ xn--tl3b67etue5sw.com
 xn--tl3b69e4zsd6b.net
 xn--tl3b69e7xja069j.net
 xn--tl3b69e9o38a95f62al6nwtbz49b.com
+xn--tl3b69e9o51v79hv1g.com
+xn--tl3b69e9o51v79hv1g.net
 xn--tl3b69e9o51vdilwhd.net
 xn--tl3b69e9on9ortcdzvxwc.com
+xn--tl3b69eg9u.com
 xn--tl3b69eg9unlb.com
 xn--tl3b78u.net
 xn--tl3b86ix1b5wh.com
@@ -655,25 +701,32 @@ xn--tl3br8mwsa702c.com
 xn--tl3br8mxri92d.com
 xn--tl3br8sv7e.com
 xn--tl3br8uujg.com
+xn--tl3br8uz4f.com
 xn--tl3brer8o.com
 xn--tl3brot1i.com
 xn--tl3bs2af4l46o.com
 xn--tl3bs2ak1p62lc2a.com
+xn--tl3bs2g7xav7e7xa2c38x.com
 xn--tl3bs2g7xav7edyae3lcpb.com
 xn--tl3bs2ge3a57d9wdj1c7zl.com
 xn--tl3bs2ge3a6zjb6b7xa99q.com
 xn--tl3bs2gfwbn0j.com
 xn--tl3bs2if7bwza.com
+xn--tl3bs45aouba.com
+xn--tl3bs6e28gmwicme.com
 xn--tl3bs6e28gxll6kb.com
 xn--tl3bsex5wqwe.com
 xn--tl3bt2a78c9tap20a7jq.com
 xn--tl3bu2g7wg03k.com
 xn--tl3bu2g7wghyba.com
+xn--tl3bu2g7wgpmi.com
 xn--tl3bu2ghufl4ar25a.com
 xn--tl3bv7iwpr.com
 xn--tl3bw7j.com
+xn--tl3by1r0c807a.com
 xn--tl3by1r0co87b.com
 xn--tl3by1r0ct1ha.com
+xn--tl3bz09aa.org
 xn--tl3bz2q0ka9d547c.com
 xn--tl3bz61b6md.com
 xn--tl3bz6eq3r.com
@@ -694,6 +747,7 @@ xn--vg1b97q53aez0d.com
 xn--vg1b97q53aez0d.net
 xn--vg1byy97lh8dp7d7zmrvvf1d.com
 xn--vg1byy97lh8dp7d7zmrvvf1d.net
+xn--vh3b29f9o51v69k3hd.com
 xn--vh3b29f9o51vn8jxpdi6a.com
 xn--vj1b01hosexpn7vn.com
 xn--vk1b75ornat4y.com
