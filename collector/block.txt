@@ -1,9 +1,9 @@
 # 토토 후보 차단 목록 — 자동 생성, 손으로 고치지 마세요
 # collector/차단스위치.txt 에서 '켜기' 로 한 분류의 후보만 들어갑니다. 설명: collector/README.md
 # 출처: HaGeZi 새 도메인 목록(GPL-3.0, 원자료 Stamus Labs)에서 이름만 보고 고른 후보
-# 만든 시각: 2026-11-20 20:08 (한국 시간)
+# 만든 시각: 2026-11-21 19:53 (한국 시간)
 # 켠 분류: 한글도박어, 한글주소안내, 로마자토토어, 번호돌림, .kr도박어
-# 개수: 757
+# 개수: 766
 1wincasinoguide.kr
 1x-casino-slots.kr
 anonymous-casino.co.kr
@@ -234,6 +234,7 @@ xn--9g4bomh8py2fuoh.com
 xn--9g4bomi0m3ub71ao45b.net
 xn--9g4boml3g9uaba198b7yw.com
 xn--9g4bomm4kupc78u.com
+xn--9g4bomm4kupc78utsd.com
 xn--9g4bomo6ah2fba198b7yw.com
 xn--9g4bomp1hpse7ur1nd.com
 xn--9g4bomq6nwza796a2qb.net
@@ -522,6 +523,8 @@ xn--o80b03nw8bbyu8qff5g.com
 xn--o80b05mqeq9icuxnug.com
 xn--o80b081a4xa14lrwa37e68hj7c.com
 xn--o80b081av2ce7csxcntl.com
+xn--o80b12ezzcv91a8lf.site
+xn--o80b24lfrh2go78an6g.net
 xn--o80b27i1vpn9b81il8c.com
 xn--o80b27imm44d698anog.com
 xn--o80b41ai41cuje7te.com
@@ -543,6 +546,7 @@ xn--o80b87do7zujed7j.com
 xn--o80b87du8c1z0a8lf.com
 xn--o80b87du8c26n8kjt7a1ys.com
 xn--o80b96rx3dt5grvdnrjn3h0rb.com
+xn--o80bj54ayvbh2g81gxth.com
 xn--o80bl47baa331d.com
 xn--o80bl47bgkd5xd.com
 xn--o80bl47bgkd9rf.net
@@ -634,6 +638,7 @@ xn--ok0bm0vglfjmggg89f.com
 xn--ok0bm0vglfjmggg89f.net
 xn--ok0bt1ctxrb2eulfb2aw7ai1bjxh436a.com
 xn--om2bi2xp2aw7ya563c.com
+xn--om2bk9f72j.net
 xn--om2bk9fr1j6jbd30b.com
 xn--om2bo5n9oao1moxbjwd743azjc.com
 xn--om2bo5n9oao1moxbjwd743azjc.net
@@ -683,6 +688,7 @@ xn--tl3br2ih7bjtas6m.net
 xn--tl3br2ikse49i.com
 xn--tl3br2in4c.net
 xn--tl3br2iuxnf8bme.com
+xn--tl3br2ixzce3a.org
 xn--tl3br4agt83cc5odjt.com
 xn--tl3br4agte4c74oijt.com
 xn--tl3br4agte4c9yae3xqwc7x6a.com
@@ -756,7 +762,10 @@ xn--w-dx2f.com
 xn--w-dx2f.net
 xn--w-dx2f87ju7i.com
 xn--w-dx2ft0i9tap20a7jq.com
+xn--w80bj6sp8a08s9hm.com
+xn--w80bj6st3ah9uca660m.com
 xn--wh1br5qn2d3pbm2h56e7qj.com
+xn--zbet-e94r15a126a75u.com
 xn--zf4b8ctx51v75jhre.net
 xn--zf4bu70ahtaa.com
 xn--zxc-d24nl1an04a7ms.com
