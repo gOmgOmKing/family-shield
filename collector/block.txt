@@ -1,9 +1,9 @@
 # 토토 후보 차단 목록 — 자동 생성, 손으로 고치지 마세요
 # collector/차단스위치.txt 에서 '켜기' 로 한 분류의 후보만 들어갑니다. 설명: collector/README.md
 # 출처: HaGeZi 새 도메인 목록(GPL-3.0, 원자료 Stamus Labs)에서 이름만 보고 고른 후보
-# 만든 시각: 2026-11-21 19:53 (한국 시간)
+# 만든 시각: 2026-11-22 19:52 (한국 시간)
 # 켠 분류: 한글도박어, 한글주소안내, 로마자토토어, 번호돌림, .kr도박어
-# 개수: 766
+# 개수: 774
 1wincasinoguide.kr
 1x-casino-slots.kr
 anonymous-casino.co.kr
@@ -172,6 +172,7 @@ xn--2s2bk3elteuzy.com
 xn--2s2bo9l9oa48a71k5zd71z.net
 xn--2x3b1py2b9t82uinc743a.net
 xn--2z1bn7t9oa32j93b4uf71z.com
+xn--2z1bo8lltduzy.com
 xn--2z1bo8lq8dc9g6va.com
 xn--2z2b3kz06aflja.com
 xn--3-dx2fg8jv3h.com
@@ -190,6 +191,7 @@ xn--5-dx2fg8jv3h.com
 xn--6i0bp5c08bv2qk6f57ftoh.com
 xn--739a882antdda354flmb.com
 xn--739av1ghxmdtiowb18a.com
+xn--80-y81j.com
 xn--88-q35i57t7mj.shop
 xn--910b3b271ewjak3nqsg.com
 xn--911-533mq6x08jjtlu4x.com
@@ -500,6 +502,7 @@ xn--metamall-z364a803nn2k.com
 xn--metamall-zf85a89zo24c.com
 xn--mk1bo0zgsfvsgxtda.com
 xn--mk1br1l4wseqca16k.com
+xn--mp2b70q15d49n.com
 xn--mp2b70q50d1nj.com
 xn--mp2b70qdxna.com
 xn--mp2b70qfxn.com
@@ -576,6 +579,7 @@ xn--o80bq93a84bbug81g.com
 xn--o80bq93a9kfu7e79chqeeg.com
 xn--o80bq93ausd9b1h52k61hj7c.com
 xn--o80bq93ausdivc63fqqc.net
+xn--o80bq93axlcqj67mnoi.com
 xn--o80br4kuydb6q8qf.com
 xn--o80br9iuyeork.com
 xn--o80brsu2z8xc7ypn0gc4jcle.com
@@ -632,6 +636,7 @@ xn--oi2bw4qe3ag1gq7d7xiz6k.net
 xn--oi2bx1p9oa44mq1d4wujfb.net
 xn--oi2bx2hv3ao4gt0b49lqyc71m.com
 xn--oi2by2hl1ks2i.com
+xn--oi2by2hnwespgc4c.com
 xn--ok0b06q0obky3c.com
 xn--ok0bm0vglffrfba02il5f.com
 xn--ok0bm0vglfjmggg89f.com
@@ -649,8 +654,10 @@ xn--oy2bj9c91kmyk.com
 xn--oy2bj9c91kmyk.net
 xn--oy2bk9ce11a.com
 xn--oy2bo5k9oan5ofva33e743a.com
+xn--oy2bo5k9oao1mq5d77u.com
 xn--p22b015avvc0sc.com
 xn--p22b015avvc0sc.org
+xn--p22b07m8wnhsa.org
 xn--pk3bl5o9ip99aa.com
 xn--pk3bl5o9ip99aa.net
 xn--pk3bm5ge3ad3f9om1k7zj.com
@@ -718,6 +725,7 @@ xn--tl3bs2ge3a57d9wdj1c7zl.com
 xn--tl3bs2ge3a6zjb6b7xa99q.com
 xn--tl3bs2gfwbn0j.com
 xn--tl3bs2if7bwza.com
+xn--tl3bs2ivxn.com
 xn--tl3bs45aouba.com
 xn--tl3bs6e28gmwicme.com
 xn--tl3bs6e28gxll6kb.com
