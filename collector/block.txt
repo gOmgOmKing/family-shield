@@ -1,9 +1,9 @@
 # 토토 후보 차단 목록 — 자동 생성, 손으로 고치지 마세요
 # collector/차단스위치.txt 에서 '켜기' 로 한 분류의 후보만 들어갑니다. 설명: collector/README.md
 # 출처: HaGeZi 새 도메인 목록(GPL-3.0, 원자료 Stamus Labs)에서 이름만 보고 고른 후보
-# 만든 시각: 2026-11-22 19:52 (한국 시간)
+# 만든 시각: 2026-11-23 20:12 (한국 시간)
 # 켠 분류: 한글도박어, 한글주소안내, 로마자토토어, 번호돌림, .kr도박어
-# 개수: 774
+# 개수: 778
 1wincasinoguide.kr
 1x-casino-slots.kr
 anonymous-casino.co.kr
@@ -177,6 +177,7 @@ xn--2z1bo8lq8dc9g6va.com
 xn--2z2b3kz06aflja.com
 xn--3-dx2fg8jv3h.com
 xn--337-2l9m48gs6w.com
+xn--365-jl1nr1vgwhupk.com
 xn--365api-2k9y.com
 xn--369au00b9oan7ec0j75r.com
 xn--392bl5av0g8kz8ce2q71h.com
@@ -194,6 +195,7 @@ xn--739av1ghxmdtiowb18a.com
 xn--80-y81j.com
 xn--88-q35i57t7mj.shop
 xn--910b3b271ewjak3nqsg.com
+xn--910bw5cb1s9tav3utmc743a.com
 xn--911-533mq6x08jjtlu4x.com
 xn--911-533mq6x08jjtlu4x.net
 xn--911-d24nl1an04a7ms.com
@@ -248,6 +250,7 @@ xn--9g4bvimfv4pc6d77u.net
 xn--9h0b32riody0hrkd.com
 xn--9i1b01oshrwy24bhsbh4u47hhf.com
 xn--9i1b14lo4bo0n.com
+xn--9i1bk3bv0hp0h9ya36rejf75z.com
 xn--9i1bo7bw8q9tap20a6xab93c.com
 xn--9i2b90hgydf0f.com
 xn--9i2b90htrip2o.com
@@ -515,6 +518,7 @@ xn--mp2bswp1r6vc.net
 xn--msi-r28oa.com
 xn--o01b06l98a.com
 xn--o01b06l98af4f8tm.com
+xn--o39a53lu5q05o.com
 xn--o39an5b76dv4j81emocuzmpwqu4j.com
 xn--o39an5bf2pfc1xg3j4wb19z.com
 xn--o39an5bf2pglc97b75npokxld.site
