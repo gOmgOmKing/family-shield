@@ -1,9 +1,9 @@
 # 토토 후보 차단 목록 — 자동 생성, 손으로 고치지 마세요
 # collector/차단스위치.txt 에서 '켜기' 로 한 분류의 후보만 들어갑니다. 설명: collector/README.md
 # 출처: HaGeZi 새 도메인 목록(GPL-3.0, 원자료 Stamus Labs)에서 이름만 보고 고른 후보
-# 만든 시각: 2026-11-24 19:59 (한국 시간)
+# 만든 시각: 2026-11-25 20:03 (한국 시간)
 # 켠 분류: 한글도박어, 한글주소안내, 로마자토토어, 번호돌림, .kr도박어
-# 개수: 778
+# 개수: 796
 1wincasinoguide.kr
 1x-casino-slots.kr
 anonymous-casino.co.kr
@@ -118,6 +118,7 @@ xn--299a40g17l9xm6lecyb.net
 xn--299a40gb5b59ibqwnog.com
 xn--299a40gn8fh5u8lf.com
 xn--299a40gt6an70b98hnkhuni.com
+xn--299a40gtwnwol8vf.com
 xn--299a74k6nfpsi9yan04a7ms.net
 xn--299a74k6nfvqd.com
 xn--299a86rb5d.com
@@ -208,6 +209,10 @@ xn--911-jl1ns0on46a.com
 xn--911-r28oa.com
 xn--911-y61mh58gn5f.com
 xn--939a382aqibp2n.com
+xn--939au0gjym.com
+xn--939au0gjym38d9yan04a7ms.com
+xn--939au0gjym3ze8vk.com
+xn--939au0gx8lwse9yan04a7ms.com
 xn--950b52ttxgdpc.com
 xn--950b7f267cihe81g0ue.com
 xn--9b6ba260bg6f.com
@@ -310,6 +315,8 @@ xn--9y2bnqb761elvhca231al9u.net
 xn--9y2boqa961elvh8tc0tt.com
 xn--9y2boqa961elvh8tc0tt.net
 xn--9y2bx7c26z.com
+xn--asdf-3w0r.com
+xn--asdf-3w0rw6u13n.com
 xn--audi-e94r15a126a75u.com
 xn--audi-el1q682atplu0mx40a.com
 xn--bb0b15egtehtquqebpc94f8v5a.com
@@ -368,6 +375,7 @@ xn--h11bt90cvrba.com
 xn--h11bw6uca587dv7a63v.com
 xn--h32bj7bt5lznc.com
 xn--h32bk7bk0p.com
+xn--h40bz6lw6i71e.com
 xn--h49a03k8unh6mx9ca.com
 xn--h49au41abqai7k9yan04a7ms.com
 xn--hc0b180a3ji0nl.com
@@ -523,6 +531,7 @@ xn--o39an5b76dv4j81emocuzmpwqu4j.com
 xn--o39an5bf2pfc1xg3j4wb19z.com
 xn--o39an5bf2pglc97b75npokxld.site
 xn--o39an5bfzg9vg85ei1ag85i.com
+xn--o39as03antdu7i79q.com
 xn--o79a991al8h.com
 xn--o79aw2futc9twumeqsglus.com
 xn--o80b03nbzb32x8qff5g.com
@@ -534,6 +543,7 @@ xn--o80b12ezzcv91a8lf.site
 xn--o80b24lfrh2go78an6g.net
 xn--o80b27i1vpn9b81il8c.com
 xn--o80b27imm44d698anog.com
+xn--o80b32rpoe75ab2rt7a1ysvkj.com
 xn--o80b41ai41cuje7te.com
 xn--o80b41u38czm820at7a1ys.net
 xn--o80b41u3tc9ta2q994aekbg2tcpm.com
@@ -567,6 +577,7 @@ xn--o80bo5sa455k8qf.com
 xn--o80bo73avlcoxf87g.com
 xn--o80bo7bvzeh6d80s3rf16i.com
 xn--o80bo9a340bpgb82l.com
+xn--o80bo9m3wgu2h71an0sfti.com
 xn--o80bp7b95iesj89f2a891b6pixpd.com
 xn--o80bp7b95iesj89f2a891b6pixpd.net
 xn--o80bp7b95ifqh7kcg5k7az63b65icxdc4t.com
@@ -631,6 +642,7 @@ xn--oi2b171a3qfgrf6ob.com
 xn--oi2b31hj3d9tap20a7jq.com
 xn--oi2b40g26wa.com
 xn--oi2ba146au9b8utjhk.com
+xn--oi2bo7bcwd37g8vk35m.com
 xn--oi2bskh1c79m9yan04a7ms.com
 xn--oi2bskh1c79m9yan04a7ms.net
 xn--oi2bskh1ce0e.com
@@ -638,6 +650,7 @@ xn--oi2bskn2df5k9yan04a7ms.com
 xn--oi2bw4qe3a08m73fxxb.com
 xn--oi2bw4qe3ag1gq7d7xiz6k.net
 xn--oi2bx1p9oa44mq1d4wujfb.net
+xn--oi2bx1p9oa88keocu6c743a.com
 xn--oi2bx2hv3ao4gt0b49lqyc71m.com
 xn--oi2by2hl1ks2i.com
 xn--oi2by2hnwespgc4c.com
@@ -668,6 +681,7 @@ xn--pk3bm5ge3ad3f9om1k7zj.com
 xn--pq1bx0hprza254b.com
 xn--qn1b520aulc92bg58a.com
 xn--qn1bt49a2wdc3l.com
+xn--qn1by9fc9fk2ysvbgwc.com
 xn--sc-cv4jswp20a7jq.com
 xn--sk4bt1gb6la.com
 xn--sm2b48fe1jwvdz8o.com
@@ -688,6 +702,7 @@ xn--tl3b69e9o51vdilwhd.net
 xn--tl3b69e9on9ortcdzvxwc.com
 xn--tl3b69eg9u.com
 xn--tl3b69eg9unlb.com
+xn--tl3b69etuel7r5va.com
 xn--tl3b78u.net
 xn--tl3b86ix1b5wh.com
 xn--tl3b86ix1btw4a.com
@@ -728,6 +743,7 @@ xn--tl3bs2g7xav7edyae3lcpb.com
 xn--tl3bs2ge3a57d9wdj1c7zl.com
 xn--tl3bs2ge3a6zjb6b7xa99q.com
 xn--tl3bs2gfwbn0j.com
+xn--tl3bs2gtvd3yed2p.net
 xn--tl3bs2if7bwza.com
 xn--tl3bs2ivxn.com
 xn--tl3bs45aouba.com
@@ -777,6 +793,8 @@ xn--w-dx2ft0i9tap20a7jq.com
 xn--w80bj6sp8a08s9hm.com
 xn--w80bj6st3ah9uca660m.com
 xn--wh1br5qn2d3pbm2h56e7qj.com
+xn--z-ex2f.com
+xn--z-ex2f77ju7i.com
 xn--zbet-e94r15a126a75u.com
 xn--zf4b8ctx51v75jhre.net
 xn--zf4bu70ahtaa.com
