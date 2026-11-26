@@ -1,9 +1,9 @@
 # 토토 후보 차단 목록 — 자동 생성, 손으로 고치지 마세요
 # collector/차단스위치.txt 에서 '켜기' 로 한 분류의 후보만 들어갑니다. 설명: collector/README.md
 # 출처: HaGeZi 새 도메인 목록(GPL-3.0, 원자료 Stamus Labs)에서 이름만 보고 고른 후보
-# 만든 시각: 2026-11-25 20:03 (한국 시간)
+# 만든 시각: 2026-11-26 20:03 (한국 시간)
 # 켠 분류: 한글도박어, 한글주소안내, 로마자토토어, 번호돌림, .kr도박어
-# 개수: 796
+# 개수: 810
 1wincasinoguide.kr
 1x-casino-slots.kr
 anonymous-casino.co.kr
@@ -26,6 +26,7 @@ casinogames.co.kr
 ihcasino.co.kr
 jeparatotosite.com
 kingdomtoto-site.com
+koreatotosite.com
 korwin12i7.com
 korwin24i9.com
 korwin25i7.vip
@@ -51,6 +52,7 @@ nekonekoslots.kr
 pokerface.kr
 safe-majorsite.com
 safetotosite.xyz
+sempurnatotosite.com
 semuttoto-site.com
 slotistes.co.kr
 sportstotosite.net
@@ -104,6 +106,7 @@ xn--220bv2fbui1lgwsdrscuxbl04d.com
 xn--220bv2fu5c71h4qf5ngtoh.com
 xn--220bx6b6y3a78ixkda.com
 xn--220bz2lp4d30fulf8obc1j.com
+xn--24-hd0jfsy05a72xokc.com
 xn--247-hy7mt18aj2bqzm71d7xm.com
 xn--299a331aetehon.com
 xn--299a331amha98k5ttd8i.com
@@ -240,6 +243,7 @@ xn--9g4bomh8pdviuyd.com
 xn--9g4bomh8pmwaa825m.com
 xn--9g4bomh8pmwaa825m.net
 xn--9g4bomh8py2fuoh.com
+xn--9g4bomi0m3ub6wxp6a.com
 xn--9g4bomi0m3ub71ao45b.net
 xn--9g4boml3g9uaba198b7yw.com
 xn--9g4bomm4kupc78u.com
@@ -316,6 +320,7 @@ xn--9y2boqa961elvh8tc0tt.com
 xn--9y2boqa961elvh8tc0tt.net
 xn--9y2bx7c26z.com
 xn--asdf-3w0r.com
+xn--asdf-3w0r.net
 xn--asdf-3w0rw6u13n.com
 xn--audi-e94r15a126a75u.com
 xn--audi-el1q682atplu0mx40a.com
@@ -418,6 +423,7 @@ xn--hq1bm8jm2f80bx6jua185kbkj.com
 xn--hq1bm8jm2f80bx6jua185kbkj.net
 xn--hq1bm8jm2fboa15qo6br99a.com
 xn--hq1bm8jm2fboa15qo6br99a.net
+xn--hq1bm8jm2fghm0x96ar44c.com
 xn--hq1bm8jm2fh9bn4iouunvc.com
 xn--hq1bm8jm2fh9bn4iouunvc.net
 xn--hq1bm8jm2flsh57oepbmzm.com
@@ -515,6 +521,7 @@ xn--mk1bo0zgsfvsgxtda.com
 xn--mk1br1l4wseqca16k.com
 xn--mp2b70q15d49n.com
 xn--mp2b70q50d1nj.com
+xn--mp2b70q50dgro.com
 xn--mp2b70qdxna.com
 xn--mp2b70qfxn.com
 xn--mp2b70qfxna.com
@@ -607,6 +614,7 @@ xn--o80bu34ah5eu7e8tg.com
 xn--o80bw39amobxd25in9j.com
 xn--o80bw5kp1dowq8vfynb.com
 xn--o80bw9m6pgzoj85f.com
+xn--o80bx03botbuzh7xg.com
 xn--o80bx81ar0dytd8yh.com
 xn--o80bx81ar0dytd8yh.net
 xn--o80bxyb32a6lebqgn5hc4j.com
@@ -655,10 +663,12 @@ xn--oi2bx2hv3ao4gt0b49lqyc71m.com
 xn--oi2by2hl1ks2i.com
 xn--oi2by2hnwespgc4c.com
 xn--ok0b06q0obky3c.com
+xn--ok0b408ae3ad3fba918b75i.org
 xn--ok0bm0vglffrfba02il5f.com
 xn--ok0bm0vglfjmggg89f.com
 xn--ok0bm0vglfjmggg89f.net
 xn--ok0bt1ctxrb2eulfb2aw7ai1bjxh436a.com
+xn--om2b33bp1cb10b.com
 xn--om2bi2xp2aw7ya563c.com
 xn--om2bk9f72j.net
 xn--om2bk9fr1j6jbd30b.com
@@ -689,10 +699,13 @@ xn--sm2bt1xixco4ka01u.com
 xn--t60bu01a9oa51v61jthai4q.com
 xn--tl3b06i91btw4a.com
 xn--tl3b06ih6bp4m.com
+xn--tl3b53q.com
+xn--tl3b55fu7m.com
 xn--tl3b59e6zs95b.com
 xn--tl3b59e6zs95b.net
 xn--tl3b59ev4ghrc6yt.com
 xn--tl3b67etue5sw.com
+xn--tl3b69e0wgivo.com
 xn--tl3b69e4zsd6b.net
 xn--tl3b69e7xja069j.net
 xn--tl3b69e9o38a95f62al6nwtbz49b.com
@@ -738,6 +751,7 @@ xn--tl3brer8o.com
 xn--tl3brot1i.com
 xn--tl3bs2af4l46o.com
 xn--tl3bs2ak1p62lc2a.com
+xn--tl3bs2g0vfi5b.com
 xn--tl3bs2g7xav7e7xa2c38x.com
 xn--tl3bs2g7xav7edyae3lcpb.com
 xn--tl3bs2ge3a57d9wdj1c7zl.com
