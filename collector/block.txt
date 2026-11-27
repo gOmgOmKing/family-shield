@@ -1,9 +1,9 @@
 # 토토 후보 차단 목록 — 자동 생성, 손으로 고치지 마세요
 # collector/차단스위치.txt 에서 '켜기' 로 한 분류의 후보만 들어갑니다. 설명: collector/README.md
 # 출처: HaGeZi 새 도메인 목록(GPL-3.0, 원자료 Stamus Labs)에서 이름만 보고 고른 후보
-# 만든 시각: 2026-11-26 20:03 (한국 시간)
+# 만든 시각: 2026-11-27 19:59 (한국 시간)
 # 켠 분류: 한글도박어, 한글주소안내, 로마자토토어, 번호돌림, .kr도박어
-# 개수: 810
+# 개수: 822
 1wincasinoguide.kr
 1x-casino-slots.kr
 anonymous-casino.co.kr
@@ -23,6 +23,7 @@ cabtotosite.com
 cantiktotosite.com
 casino-sites-korea.co.kr
 casinogames.co.kr
+cubetour.co.kr
 ihcasino.co.kr
 jeparatotosite.com
 kingdomtoto-site.com
@@ -41,6 +42,7 @@ krvip34l7.vip
 krwin888.com
 livecasino.kr
 macbeth.co.kr
+majortotosites.com
 melbet-slots.kr
 mika-toto-site.com
 mtpolice.xyz
@@ -60,9 +62,11 @@ top1totosite.com
 toto-site-build.com
 totomeoktwiblog.com
 totosite-ko.com
+totosite-kr.org
 totosite.store
 totositefamily.com
 totositegorilla.com
+totositetalk.com
 totositetop.com
 totositeweb.com
 totositez.net
@@ -104,6 +108,7 @@ xn--220bp2k25d91gu6eqsg.com
 xn--220bp2k2njjzdr6aq1i8r0a.com
 xn--220bv2fbui1lgwsdrscuxbl04d.com
 xn--220bv2fu5c71h4qf5ngtoh.com
+xn--220bv2fu5cvwgo4af62aukcn2b.com
 xn--220bx6b6y3a78ixkda.com
 xn--220bz2lp4d30fulf8obc1j.com
 xn--24-hd0jfsy05a72xokc.com
@@ -172,6 +177,7 @@ xn--2o2bk3fn8d9ta27mk1f71v.com
 xn--2o2bk3fz1dv1g.com
 xn--2q1bn6i62gymaz8ce2q71h.com
 xn--2q1bp1r9rc3sbm4fy1g7xim3l.net
+xn--2q1bw0w9oa39jcnfbployh.com
 xn--2s2bk3elteuzy.com
 xn--2s2bo9l9oa48a71k5zd71z.net
 xn--2x3b1py2b9t82uinc743a.net
@@ -196,6 +202,7 @@ xn--5-dx2fg8jv3h.com
 xn--6i0bp5c08bv2qk6f57ftoh.com
 xn--739a882antdda354flmb.com
 xn--739av1ghxmdtiowb18a.com
+xn--77-w81j.com
 xn--80-y81j.com
 xn--88-q35i57t7mj.shop
 xn--910b3b271ewjak3nqsg.com
@@ -233,6 +240,7 @@ xn--9g4bom60aw9p6nkhjdegz8c.net
 xn--9g4bom60aw9p7nkojbv6g.com
 xn--9g4bom60aw9pr9df9n.com
 xn--9g4bom60az5l53b6xpbvi.net
+xn--9g4bomh8p0yk9jbm3d.com
 xn--9g4bomh8p4sj4uc.com
 xn--9g4bomh8p73fjkgr8a.com
 xn--9g4bomh8p75i9kdizd.com
@@ -357,6 +365,7 @@ xn--bk1ba326ei6d9rkosr.net
 xn--bk1ba326euilue.com
 xn--bp2bm3eo0eowi97oena.com
 xn--bx3bm1chcr3ap11a7jq.com
+xn--by3bm1de3a08m73f1ph.com
 xn--c79a502atlgx5c.com
 xn--c79a63xb6eisu.com
 xn--cw4by2ya230b.com
@@ -668,9 +677,11 @@ xn--ok0bm0vglffrfba02il5f.com
 xn--ok0bm0vglfjmggg89f.com
 xn--ok0bm0vglfjmggg89f.net
 xn--ok0bt1ctxrb2eulfb2aw7ai1bjxh436a.com
+xn--ok0bt1cu7yjqd67ct2c.com
 xn--om2b33bp1cb10b.com
 xn--om2bi2xp2aw7ya563c.com
 xn--om2bk9f72j.net
+xn--om2bk9fn0e0vfb3d.com
 xn--om2bk9fr1j6jbd30b.com
 xn--om2bo5n9oao1moxbjwd743azjc.com
 xn--om2bo5n9oao1moxbjwd743azjc.net
@@ -800,6 +811,7 @@ xn--vh3b29f9o51vn8jxpdi6a.com
 xn--vj1b01hosexpn7vn.com
 xn--vk1b75ornat4y.com
 xn--vk1b80t2ncda354flmb.com
+xn--vk1bx03bvhc70ha321d.com
 xn--w-dx2f.com
 xn--w-dx2f.net
 xn--w-dx2f87ju7i.com
